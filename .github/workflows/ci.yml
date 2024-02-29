@@ -2,7 +2,8 @@ name: CI
 
 on:
   push:
-    branches: [ "feature-branch" ]
+    branches: 
+      - 'feature-*'
 
 jobs:
 
