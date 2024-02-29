@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [ "feature-branch" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Code
+      uses: actions/checkout@v3
+
+    - name: Build
+    #run:  docker build -t tech-trend-emporium ./app
+      run: |
+        echo "Building the app"
+
+  test:
+
+    runs-on: ubuntu-latest
+
+    needs: build
+
+    steps:
+    - name: Code
+      uses: actions/checkout@v3
+
+    - name: Test
+      # run: docker run tech-trend-emporium
+      run: |
+        echo "Testing the app" 
+  
+  release:
+
+    runs-on: ubuntu-latest
+
+    needs: test
+
+    steps:
+    - name: Tag
+      # run: |
+      #   docker tag tech-trend-emporium tech-trend-emporium:${{ github.sha }}
+      run: |
+        echo "Tagging the app"
+      
+    - name: Push
+      # run: |
+      #   docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+      #   docker push tech-trend-emporium:${{ github.sha }}
+      run: |
+        echo "Pushing the app"
