@@ -58,7 +58,7 @@ jobs:
       run: docker tag tech-trend-emporium tech-trend-emporium:${{ github.sha }}
 
     - name: Push
-      run: docker push tech-trend-emporium:${{ github.sha }}
+      run: docker push backendchallenge2024/tech-trend-emporium:${{ github.sha }}
 
       # run: |
       #   docker build -t tech-trend-emporium ./TechTrendEmporium/TechTrendEmporium/
