@@ -15,12 +15,9 @@ jobs:
     - name: Code
       uses: actions/checkout@v3
 
-    - name: Build and push Docker image
-      uses: docker/build-push-action@v2
-      with:
-        context: ./TechTrendEmporium/TechTrendEmporium/
-        push: true
-        tags: tech-trend-emporium:latest
+    - name: Build
+      run:  docker build -t tech-trend-emporium ./TechTrendEmporium/TechTrendEmporium/
+            # echo "Building the app"
 
   test:
 
@@ -33,6 +30,7 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Test
+      # run: docker run tech-trend-emporium
       run: |
         echo "Testing the app" 
   
@@ -43,17 +41,11 @@ jobs:
     needs: test
 
     steps:
-    - name: Login to DockerHub
-      uses: docker/login-action@v1
-      with:
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
-
-    - name: Pull Docker image
-      run: docker pull tech-trend-emporium:latest
-
-    - name: Tag
-      run: docker tag tech-trend-emporium:latest tech-trend-emporium:${{ github.sha }}
-
+    # - name: Tag
+    #   run: |
+    #     docker tag tech-trend-emporium tech-trend-emporium:${{ github.sha }}
+      
     - name: Push
-      run: docker push tech-trend-emporium:${{ github.sha }}
+      run: |
+        docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+        docker push tech-trend-emporium:${{ github.sha }}
