@@ -17,7 +17,7 @@ jobs:
 
     - name: Build
       run:  docker buildx build -t tech-trend-emporium .
-            echo "Building the app"
+            # echo "Building the app"
 
   test:
 
