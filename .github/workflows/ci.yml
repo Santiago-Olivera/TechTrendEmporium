@@ -44,9 +44,11 @@ jobs:
     # - name: Tag
     #   run: |
     #     docker tag tech-trend-emporium tech-trend-emporium:${{ github.sha }}
+
+    - name: Login to DockerHub
+      run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+
       
     - name: Push
       run: |
-        docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
         docker push tech-trend-emporium:${{ github.sha }}
-        
