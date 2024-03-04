@@ -16,7 +16,7 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Build
-      run:  docker buildx build -t tech-trend-emporium ./TechTrendEmporium/TechTrendEmporium/TechTrendEmporium
+      run:  docker build -t tech-trend-emporium ./TechTrendEmporium/TechTrendEmporium/
             # echo "Building the app"
 
   test:
