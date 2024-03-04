@@ -43,11 +43,9 @@ jobs:
     steps:
     - name: Tag
       run: |
-        echo "Tagging the app with the branch name and commit sha"
-        docker tag tech-trend-emporium tech-trend-emporium:${{ github.ref_name }}-${{ github.sha }}
+        docker tag tech-trend-emporium tech-trend-emporium:${{ github.sha }}
       
     - name: Push
       run: |
-        echo "Pushing the app"
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
         docker push tech-trend-emporium:${{ github.ref_name }}/${{ github.sha }}
