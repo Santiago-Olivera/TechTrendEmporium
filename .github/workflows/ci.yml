@@ -53,7 +53,7 @@ jobs:
           tags: tech-trend-emporium:${{ github.sha }}
       - name: Inspect
         run: |
-          docker image inspect myimage:${{ github.sha }}
+          docker image inspect tech-trend-emporium:${{ github.sha }}
     # - name: Tag
     #   run: |
     #     docker tag tech-trend-emporium tech-trend-emporium:${{ github.sha }}
