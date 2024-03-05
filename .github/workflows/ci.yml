@@ -58,7 +58,7 @@ jobs:
         with:
           context: ./TechTrendEmporium/TechTrendEmporium/
           push: true
-          tags: tech-trend-emporium:${{ github.sha }}
+          tags: backendchallenge2024/tech-trend-emporium:${{ github.sha }}
 
     # - name: Tag
     #   run: |
