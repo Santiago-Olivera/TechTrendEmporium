@@ -58,7 +58,7 @@ jobs:
       run: docker tag tech-trend-emporium tech-trend-emporium:1.0.0
 
     - name: Push
-      run: docker push backendchallenge2024/tech-trend-emporium:1.0.0
+      run: docker push backendchallenge2024\tech-trend-emporium:1.0.0
 
       # run: |
       #   docker build -t tech-trend-emporium ./TechTrendEmporium/TechTrendEmporium/
