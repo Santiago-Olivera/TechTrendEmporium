@@ -1,13 +1,16 @@
 package com.BackendChallenge.TechTrendEmporium.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 
-
-@Data
 @Entity
 @Table (name = "user") // Table name: user
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
