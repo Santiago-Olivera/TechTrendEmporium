@@ -22,8 +22,8 @@ public class AuthController {
     }
 
     @PostMapping(value = "auth")
-    public ResponseEntity<AuthResponse> register(@RequestBody RegisterRequest request)
+    public ResponseEntity<AuthResponse> registerShopper(@RequestBody RegisterShopperRequest request)
     {
-        return ResponseEntity.ok(authService.register(request));
+        return ResponseEntity.ok(authService.registerShopper(request));
     }
 }

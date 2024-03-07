@@ -23,8 +23,8 @@ public class AuthService {
     private final AuthenticationManager authenticationManager;
 
     public AuthResponse login(LoginRequest request) {
-        authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword()));
-        UserDetails user=userRepository.findByUsername(request.getUsername()).orElseThrow();
+        authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword()));
+        UserDetails user=userRepository.findByEmail(request.getEmail()).orElseThrow(()->new RuntimeException("User not found"));
         String token=jwtService.getToken(user);
         return AuthResponse.builder()
                 .token(token)
@@ -32,7 +32,7 @@ public class AuthService {
 
     }
 
-    public AuthResponse register(RegisterRequest request) {
+    public AuthResponse registerShopper(RegisterShopperRequest request) {
         User user = User.builder()
                 .email(request.getEmail())
                 .username(request.getUsername())
