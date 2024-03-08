@@ -28,8 +28,9 @@ public class AuthService {
         String token=jwtService.getToken(user);
         return AuthResponse.builder()
                 .token(token)
+                .email(request.getEmail())
+                .username(user.getUsername())
                 .build();
-
     }
 
     public AuthResponse registerShopper(RegisterShopperRequest request) {
