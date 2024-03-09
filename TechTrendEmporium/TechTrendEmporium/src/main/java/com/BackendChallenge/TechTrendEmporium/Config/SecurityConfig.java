@@ -2,9 +2,11 @@ package com.BackendChallenge.TechTrendEmporium.Config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
@@ -12,6 +14,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import com.BackendChallenge.TechTrendEmporium.JWT.JwtAuthenticationFilter;
 
 import lombok.RequiredArgsConstructor;
+
+import java.security.Permission;
 
 @Configuration
 @EnableWebSecurity
@@ -25,12 +29,11 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception
     {
         return http
-                .csrf(csrf ->
-                        csrf
-                                .disable())
+                .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authRequest ->
                         authRequest
-                                .requestMatchers("/api/**").permitAll()
+                                .requestMatchers(HttpMethod.POST,"/api/auth").permitAll()
+                                .requestMatchers(HttpMethod.POST,"/api/login").permitAll()
                                 .anyRequest().authenticated()
                 )
                 .sessionManagement(sessionManager->

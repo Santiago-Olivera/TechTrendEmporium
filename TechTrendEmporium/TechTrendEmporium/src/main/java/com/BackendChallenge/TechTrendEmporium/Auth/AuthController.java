@@ -1,10 +1,7 @@
 package com.BackendChallenge.TechTrendEmporium.Auth;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import lombok.RequiredArgsConstructor;
 
@@ -26,4 +23,11 @@ public class AuthController {
     {
         return ResponseEntity.ok(authService.registerShopper(request));
     }
+
+    @PostMapping(value = "admin/auth")
+    public ResponseEntity<AuthResponseE> registerEmployee(@RequestBody RegisterEmployeeRequest request)
+    {
+        return ResponseEntity.ok(authService.registerEmployee(request));
+    }
+
 }

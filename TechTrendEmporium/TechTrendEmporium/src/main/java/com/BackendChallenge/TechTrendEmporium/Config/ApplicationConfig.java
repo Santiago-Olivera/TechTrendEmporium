@@ -1,5 +1,7 @@
 package com.BackendChallenge.TechTrendEmporium.Config;
 
+import com.BackendChallenge.TechTrendEmporium.entity.User;
+import org.apache.naming.factory.SendMailFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -10,10 +12,11 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-
 import com.BackendChallenge.TechTrendEmporium.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
+
+import java.util.Optional;
 
 @Configuration
 @RequiredArgsConstructor
@@ -42,9 +45,25 @@ public class ApplicationConfig {
     }
 
     @Bean
+
     public UserDetailsService userDetailService() {
-        return email -> userRepository.findByEmail(email)
-                .orElseThrow(()-> new UsernameNotFoundException("User not fournd"));
+
+        return email -> {
+
+            Optional<User> adminOptional = userRepository.findByEmail(email);
+
+            adminOptional.get().setUsername(adminOptional.get().getEmail());
+
+            if (adminOptional.isPresent()) {
+
+                return adminOptional.get();
+
+            }
+
+            throw new UsernameNotFoundException("User not found");
+
+        };
+
     }
 
 }

@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
+import com.BackendChallenge.TechTrendEmporium.entity.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -20,16 +21,17 @@ public class JwtService {
 
     private static final String SECRET_KEY="586E3272357538782F413F4428472B4B6250655368566B597033733676397924";
 
-    public String getToken(UserDetails user) {
-        return getToken(new HashMap<>(), user);
+    public String getToken(User user) {
+        Map<String, Object> claims = new HashMap<>();
+        claims.put("role", user.getAuthorities().stream().findFirst().get().getAuthority());
+        return getToken(claims, user);
     }
 
-    private String getToken(Map<String,Object> extraClaims, UserDetails user) {
+    private String getToken(Map<String,Object> extraClaims, User user) {
         return Jwts
                 .builder()
                 .setClaims(extraClaims)
-                .setSubject(user.getUsername())
-                .claim("role", user.getAuthorities())
+                .setSubject(user.getEmail())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis()+1000*60*25))
                 .signWith(getKey(), SignatureAlgorithm.HS256)
@@ -46,8 +48,9 @@ public class JwtService {
     }
 
     public boolean isTokenValid(String token, UserDetails userDetails) {
-        final String username=getUsernameFromToken(token);
-        return (username.equals(userDetails.getUsername())&& !isTokenExpired(token));
+        final String username = getUsernameFromToken(token);
+        final String role = getClaim(token, claims -> claims.get("role", String.class));
+        return (username.equals(userDetails.getUsername()) && role.equals(userDetails.getAuthorities().stream().findFirst().get().getAuthority()) && !isTokenExpired(token));
     }
 
     private Claims getAllClaims(String token)
