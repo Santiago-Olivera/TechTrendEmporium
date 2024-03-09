@@ -34,6 +34,7 @@ public class SecurityConfig {
                         authRequest
                                 .requestMatchers(HttpMethod.POST,"/api/auth").permitAll()
                                 .requestMatchers(HttpMethod.POST,"/api/login").permitAll()
+                                .requestMatchers(HttpMethod.POST,"/api/admin/auth").hasAuthority("ADMIN")
                                 .anyRequest().authenticated()
                 )
                 .sessionManagement(sessionManager->
