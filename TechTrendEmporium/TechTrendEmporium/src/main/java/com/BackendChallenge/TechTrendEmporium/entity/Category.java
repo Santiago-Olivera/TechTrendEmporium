@@ -3,7 +3,6 @@ package com.BackendChallenge.TechTrendEmporium.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-
 @Data
 @Entity
 @Table(name = "category") // Table name: category
@@ -12,7 +11,10 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; // id to identify each category
 
-    private String category; // category should be a string
+    private String name; // category name
+
+    // Constructors, getters, and setters
 }
+
 
 

@@ -10,7 +10,10 @@
 	</parent>
 	<groupId>com.BackendChallenge</groupId>
 	<artifactId>TechTrendEmporium</artifactId>
+	<groupId>com.BackendChallenge</groupId>
+	<artifactId>TechTrendEmporium</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<name>TechTrendEmporium</name>
 	<name>TechTrendEmporium</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -45,6 +48,11 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.26</version> <!-- Use the latest version -->
@@ -71,7 +79,12 @@
 			<artifactId>jjwt-jackson</artifactId>
 			<version>0.11.5</version>
 			<scope>runtime</scope>
+		</dependency>		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<build>
