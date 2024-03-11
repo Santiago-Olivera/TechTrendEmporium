@@ -30,4 +30,10 @@ public class AuthController {
         return ResponseEntity.ok(authService.registerEmployee(request));
     }
 
+    @PostMapping(value = "logout")
+    public ResponseEntity<AuthResponse> logout(@RequestBody LogoutRequest request)
+    {
+        return ResponseEntity.ok(authService.logout(request));
+    }
+
 }
