@@ -1,2 +1,4 @@
+com\BackendChallenge\TechTrendEmporium\AuthServiceTest.class
+com\BackendChallenge\TechTrendEmporium\service\CategoryServiceTest.class
 com\BackendChallenge\TechTrendEmporium\service\ProductServiceTest.class
 com\BackendChallenge\TechTrendEmporium\TechTrendEmporiumApplicationTests.class
