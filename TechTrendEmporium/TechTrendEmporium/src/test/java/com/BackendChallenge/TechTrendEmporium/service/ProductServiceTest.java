@@ -3,21 +3,17 @@ package com.BackendChallenge.TechTrendEmporium.service;
 import com.BackendChallenge.TechTrendEmporium.entity.Product;
 import com.BackendChallenge.TechTrendEmporium.repository.ProductRepository;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
-import static org.junit.Assert.assertEquals;
-
 
 import java.util.Arrays;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
 public class ProductServiceTest {
 
@@ -26,11 +22,6 @@ public class ProductServiceTest {
 
     @InjectMocks
     private ProductService productService;
-
-    @Test
-    public void testSomething() {
-        System.out.println("testing!");// Test logic goes here""
-    }
 
     @Test
     public void testFetchAndSaveProducts() {
@@ -64,4 +55,5 @@ public class ProductServiceTest {
         assertEquals(2, retrievedProducts.size()); // Assuming two products were mocked
     }
 }
+
 

@@ -17,6 +17,7 @@ public class CategoryService {
     @Autowired
     private CategoryRepository categoryRepository;
 
+
     private static final String EXTERNAL_API_URL_CATEGORIES = "https://fakestoreapi.com/products/categories";
 
     public void fetchCategoryNames() {

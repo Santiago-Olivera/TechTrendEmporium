@@ -19,13 +19,13 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
-    @GetMapping
+    @GetMapping("/fetch")
     public ResponseEntity<String> saveAllCategories() {
         categoryService.fetchCategoryNames();
         return new ResponseEntity<>("Categories saved successfully", HttpStatus.OK);
     }
-    @GetMapping("/show")
-    public List<Category> getAllProducts() {
+    @GetMapping
+    public List<Category> getAllCategories() {
         return categoryService.getAllCategories();
     }
 }
