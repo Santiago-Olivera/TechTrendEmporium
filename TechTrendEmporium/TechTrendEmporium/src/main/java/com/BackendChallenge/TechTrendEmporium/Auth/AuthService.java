@@ -91,10 +91,11 @@ public class AuthService {
 
         userRepository.save(user);
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(AuthResponse.builder()
+        return ResponseEntity.status(HttpStatus.CREATED).body(AuthResponseE.builder()
                 .token(jwtService.getToken(user))
                 .email(user.getEmail())
                 .username(user.getUsername())
+                .role(user.getRole())
                 .build());
     }
 
