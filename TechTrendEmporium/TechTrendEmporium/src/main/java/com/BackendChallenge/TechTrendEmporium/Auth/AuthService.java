@@ -4,7 +4,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +14,8 @@ import com.BackendChallenge.TechTrendEmporium.entity.Role;
 
 import lombok.RequiredArgsConstructor;
 
+import java.util.regex.Pattern;
+
 @Service
 @RequiredArgsConstructor
 public class AuthService {
@@ -24,16 +25,14 @@ public class AuthService {
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
 
-    public AuthResponse login(LoginRequest request) {
-        authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword()));
+    public ResponseEntity<Object> login(LoginRequest request) {
         User user = userRepository.findByEmail(request.getEmail()).orElseThrow(() -> new RuntimeException("User not found"));
+        String name = user.getUsername();
+        authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword()));
+        user.setUsername(name);
         if (user.isLogged()) {
             System.out.println("User already logged in");
-            return AuthResponse.builder()
-                    .token("User already logged in")
-                    .email("User already logged in")
-                    .username("User already logged in")
-                    .build();
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("User already logged in");
         } else {
             user.setLogged(true);
             userRepository.save(user);
@@ -41,16 +40,31 @@ public class AuthService {
         String token = jwtService.getToken(user);
         user.setLogged(true);
         userRepository.save(user);
-        return AuthResponse.builder()
+        return ResponseEntity.ok(AuthResponse.builder()
                 .token(token)
                 .email(user.getEmail())
-                .username(user.getUsername())
-                .build();
+                .username(name)
+                .build());
     }
 
 
 
-    public AuthResponse registerShopper(RegisterShopperRequest request) {
+    public ResponseEntity<Object> registerShopper(RegisterShopperRequest request) {
+
+        String regexEmail = "^(.+)@(.+)$";
+        String regexUsername = "^[a-zA-Z0-9_]{5,20}$";
+        String regexPassword = "^[a-zA-Z0-9_]{8,20}$";
+
+        String email = request.getEmail();
+        String username = request.getUsername();
+        String password = request.getPassword();
+
+        if (!Pattern.matches(regexEmail, email) || !Pattern.matches(regexUsername, username) || !Pattern.matches(regexPassword, password)) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid input, please check your email, username and password");
+        }
+        if (userRepository.findByEmail(email).isPresent() || userRepository.findByUsername(username).isPresent()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Email or username already exists");
+        }
         User user = User.builder()
                 .email(request.getEmail())
                 .username(request.getUsername())
@@ -60,14 +74,14 @@ public class AuthService {
 
         userRepository.save(user);
 
-        return AuthResponse.builder()
+        return ResponseEntity.status(HttpStatus.CREATED).body(AuthResponse.builder()
                 .token(jwtService.getToken(user))
                 .email(user.getEmail())
                 .username(user.getUsername())
-                .build();
+                .build());
     }
 
-    public AuthResponseE registerEmployee(RegisterEmployeeRequest request) {
+    public ResponseEntity<Object> registerEmployee(RegisterEmployeeRequest request) {
         User user = User.builder()
                 .email(request.getEmail())
                 .username(request.getUsername())
@@ -77,28 +91,24 @@ public class AuthService {
 
         userRepository.save(user);
 
-        return AuthResponseE.builder()
+        return ResponseEntity.status(HttpStatus.CREATED).body(AuthResponse.builder()
                 .token(jwtService.getToken(user))
                 .email(user.getEmail())
                 .username(user.getUsername())
-                .role(user.getRole())
-                .build();
+                .build());
     }
 
-    public AuthResponse logout(LogoutRequest request) {
-        authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword()));
+    public ResponseEntity<Object> logout(LogoutRequest request) {
         User user=userRepository.findByEmail(request.getEmail()).orElseThrow(()->new RuntimeException("User not found"));
+        String name = user.getUsername();
+        authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword()));
+        user.setUsername(name);
         if (user.isLogged()) {
             user.setLogged(false);
             userRepository.save(user);
-            return AuthResponse.builder()
-                    .token("OK")
-                    .build();
+            return ResponseEntity.status(HttpStatus.OK).body("OK");
         } else {
-            System.out.println("User already logged out");
-            return AuthResponse.builder()
-                    .token("User already logged out")
-                    .build();
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("User already logged out");
         }
     }
 }

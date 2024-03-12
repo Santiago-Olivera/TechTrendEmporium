@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.*;
 
 import lombok.RequiredArgsConstructor;
 
+import javax.management.ObjectName;
+
 @RestController
 @RequestMapping("/api/")
 @RequiredArgsConstructor
@@ -13,27 +15,31 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping(value = "login")
-    public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest request)
-    {
-        return ResponseEntity.ok(authService.login(request));
+    public Object login(@RequestBody LoginRequest request) {
+        ResponseEntity<Object> responseEntity = authService.login(request);
+        return responseEntity.getBody();
     }
 
+
     @PostMapping(value = "auth")
-    public ResponseEntity<AuthResponse> registerShopper(@RequestBody RegisterShopperRequest request)
+    public Object registerShopper(@RequestBody RegisterShopperRequest request)
     {
-        return ResponseEntity.ok(authService.registerShopper(request));
+        ResponseEntity<Object> responseEntity = authService.registerShopper(request);
+        return responseEntity.getBody();
     }
 
     @PostMapping(value = "admin/auth")
-    public ResponseEntity<AuthResponseE> registerEmployee(@RequestBody RegisterEmployeeRequest request)
+    public Object registerEmployee(@RequestBody RegisterEmployeeRequest request)
     {
-        return ResponseEntity.ok(authService.registerEmployee(request));
+        ResponseEntity<Object> responseEntity = authService.registerEmployee(request);
+        return responseEntity.getBody();
     }
 
     @PostMapping(value = "logout")
-    public ResponseEntity<AuthResponse> logout(@RequestBody LogoutRequest request)
+    public Object logout(@RequestBody LogoutRequest request)
     {
-        return ResponseEntity.ok(authService.logout(request));
+        ResponseEntity<Object> responseEntity = authService.logout(request);
+        return responseEntity.getBody();
     }
 
 }
