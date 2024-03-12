@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c0473d88-cbfc-4178-9dd7-1764d80a021a" name="Changes" comment="&#10;List of products and List of categories.&#10;&#10;what ? persist List of products and List of categories from fakestore api to our database.&#10;why ? to show all products and categories.">
+      <change afterPath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/src/test/java/com/BackendChallenge/TechTrendEmporium/service/CategoryServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/target/test-classes/com/BackendChallenge/TechTrendEmporium/service/CategoryServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/src/main/java/com/BackendChallenge/TechTrendEmporium/controller/AuthController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/src/main/java/com/BackendChallenge/TechTrendEmporium/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/src/main/java/com/BackendChallenge/TechTrendEmporium/controller/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/src/main/java/com/BackendChallenge/TechTrendEmporium/entity/mapper/UserDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/src/main/java/com/BackendChallenge/TechTrendEmporium/entity/mapper/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/src/main/java/com/BackendChallenge/TechTrendEmporium/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/src/main/java/com/BackendChallenge/TechTrendEmporium/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/src/main/java/com/BackendChallenge/TechTrendEmporium/service/CategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/src/main/java/com/BackendChallenge/TechTrendEmporium/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/src/test/java/com/BackendChallenge/TechTrendEmporium/service/ProductServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/src/test/java/com/BackendChallenge/TechTrendEmporium/service/ProductServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/target/classes/com/BackendChallenge/TechTrendEmporium/TechTrendEmporiumApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/target/classes/com/BackendChallenge/TechTrendEmporium/TechTrendEmporiumApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/target/classes/com/BackendChallenge/TechTrendEmporium/controller/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/target/classes/com/BackendChallenge/TechTrendEmporium/controller/AuthController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/target/classes/com/BackendChallenge/TechTrendEmporium/controller/CategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/target/classes/com/BackendChallenge/TechTrendEmporium/controller/CategoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/target/classes/com/BackendChallenge/TechTrendEmporium/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/target/classes/com/BackendChallenge/TechTrendEmporium/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/target/classes/com/BackendChallenge/TechTrendEmporium/entity/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/target/classes/com/BackendChallenge/TechTrendEmporium/entity/mapper/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/target/classes/com/BackendChallenge/TechTrendEmporium/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/target/classes/com/BackendChallenge/TechTrendEmporium/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/target/classes/com/BackendChallenge/TechTrendEmporium/service/CategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/target/classes/com/BackendChallenge/TechTrendEmporium/service/CategoryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/target/test-classes/com/BackendChallenge/TechTrendEmporium/TechTrendEmporiumApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/target/test-classes/com/BackendChallenge/TechTrendEmporium/TechTrendEmporiumApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/target/test-classes/com/BackendChallenge/TechTrendEmporium/service/ProductServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/target/test-classes/com/BackendChallenge/TechTrendEmporium/service/ProductServiceTest.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="feature-ListCategories" />
+                    <option name="lastUsedInstant" value="1710020833" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1710020722" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature-ProductAndCategories_Tests" />
+                    <option name="lastUsedInstant" value="1709921247" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature-ListProducts" />
+                    <option name="lastUsedInstant" value="1709834678" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature-signupShopperTestJWT" />
+                    <option name="lastUsedInstant" value="1709782793" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="main" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2dHHFeijo6BWHXPtuhyZsEyiuTo" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.CategoryServiceTest.executor": "Run",
+    "JUnit.CategoryServiceTest.testFetchCategoryNames.executor": "Run",
+    "JUnit.ProductServiceTest.executor": "Run",
+    "JUnit.TechTrendEmporiumApplicationTests.executor": "Run",
+    "JUnit.service in TechTrendEmporium.executor": "Coverage",
+    "Maven.TechTrendEmporium [clean].executor": "Run",
+    "Maven.TechTrendEmporium [install].executor": "Run",
+    "Maven.TechTrendEmporium [test].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.TechTrendEmporiumApplication.executor": "Run",
+    "git-widget-placeholder": "feature-ListCategories",
+    "ignore.virus.scanning.warn.message": "true",
+    "ignore_missing_gitignore": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/solivera/OneDrive - ENDAVA/Documents/Backend Challenge/TTE/TechTrendEmporium/TechTrendEmporium/TechTrendEmporium",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.testRunning",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\solivera\OneDrive - ENDAVA\Documents\Backend Challenge\TTE\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium" />
+      <recent name="C:\Users\solivera\OneDrive - ENDAVA\Documents\Backend Challenge\TTE\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\solivera\OneDrive - ENDAVA\Documents\Backend Challenge\TTE\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\entity" />
+      <recent name="C:\Users\solivera\OneDrive - ENDAVA\Documents\Backend Challenge\TTE\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.service in TechTrendEmporium">
+    <configuration name="CategoryServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TechTrendEmporium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.BackendChallenge.TechTrendEmporium.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.BackendChallenge.TechTrendEmporium.service" />
+      <option name="MAIN_CLASS_NAME" value="com.BackendChallenge.TechTrendEmporium.service.CategoryServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CategoryServiceTest.testFetchCategoryNames" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TechTrendEmporium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.BackendChallenge.TechTrendEmporium.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.BackendChallenge.TechTrendEmporium.service" />
+      <option name="MAIN_CLASS_NAME" value="com.BackendChallenge.TechTrendEmporium.service.CategoryServiceTest" />
+      <option name="METHOD_NAME" value="testFetchCategoryNames" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TechTrendEmporium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.BackendChallenge.TechTrendEmporium.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.BackendChallenge.TechTrendEmporium.service" />
+      <option name="MAIN_CLASS_NAME" value="com.BackendChallenge.TechTrendEmporium.service.ProductServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TechTrendEmporiumApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TechTrendEmporium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.BackendChallenge.TechTrendEmporium.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.BackendChallenge.TechTrendEmporium" />
+      <option name="MAIN_CLASS_NAME" value="com.BackendChallenge.TechTrendEmporium.TechTrendEmporiumApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="service in TechTrendEmporium" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TechTrendEmporium" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/TechTrendEmporium/TechTrendEmporium/src/test/java/com/BackendChallenge/TechTrendEmporium/service" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TechTrendEmporiumApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="TechTrendEmporium" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.BackendChallenge.TechTrendEmporium.TechTrendEmporiumApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.service in TechTrendEmporium" />
+        <item itemvalue="JUnit.ProductServiceTest" />
+        <item itemvalue="JUnit.CategoryServiceTest" />
+        <item itemvalue="JUnit.CategoryServiceTest.testFetchCategoryNames" />
+        <item itemvalue="JUnit.TechTrendEmporiumApplicationTests" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+        <option value="jdk-17.0.10-corretto-17.0.10-f644763e9732-24fca987" />
+        <option value="jdk-21.0.2-openjdk-21.0.2-f644763e9732-c0c073db" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c0473d88-cbfc-4178-9dd7-1764d80a021a" name="Changes" comment="" />
+      <created>1709657980765</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1709657980765</updated>
+      <workItem from="1709657981875" duration="51568000" />
+      <workItem from="1709834523292" duration="17879000" />
+      <workItem from="1709926234355" duration="7209000" />
+      <workItem from="1710021031312" duration="15152000" />
+    </task>
+    <task id="LOCAL-00001" summary="Creating some entities for the DB">
+      <option name="closed" value="true" />
+      <created>1709658829554</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1709658829554</updated>
+    </task>
+    <task id="LOCAL-00002" summary="All entities for the DB">
+      <option name="closed" value="true" />
+      <created>1709668457541</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1709668457542</updated>
+    </task>
+    <task id="LOCAL-00003" summary="All entities for the DB">
+      <option name="closed" value="true" />
+      <created>1709736134517</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1709736134517</updated>
+    </task>
+    <task id="LOCAL-00004" summary="All entities for the DB and aws connection">
+      <option name="closed" value="true" />
+      <created>1709736186185</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1709736186185</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Sign up shopperv1">
+      <option name="closed" value="true" />
+      <created>1709746373839</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1709746373839</updated>
+    </task>
+    <task id="LOCAL-00006" summary="&#10;List of products and List of categories.&#10;&#10;what ? persist List of products and List of categories from fakestore api to our database.&#10;why ? to show all products and categories.">
+      <option name="closed" value="true" />
+      <created>1710019341091</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1710019341091</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Creating some entities for the DB" />
+    <MESSAGE value="All entities for the DB" />
+    <MESSAGE value="All entities for the DB and aws connection" />
+    <MESSAGE value="Sign up shopperv1" />
+    <MESSAGE value="&#10;List of products and List of categories.&#10;&#10;what ? persist List of products and List of categories from fakestore api to our database.&#10;why ? to show all products and categories." />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;List of products and List of categories.&#10;&#10;what ? persist List of products and List of categories from fakestore api to our database.&#10;why ? to show all products and categories." />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/TechTrendEmporium$service_in_TechTrendEmporium.ic" NAME="service in TechTrendEmporium Coverage Results" MODIFIED="1710251488464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/TechTrendEmporium$ProductServiceTest.ic" NAME="ProductServiceTest Coverage Results" MODIFIED="1710176030941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.BackendChallenge.TechTrendEmporium.service.*</FILTER>
+    </SUITE>
+  </component>
+</project>

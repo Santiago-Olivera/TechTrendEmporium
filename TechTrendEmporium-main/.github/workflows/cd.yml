@@ -1,0 +1,25 @@
+name: CD
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
+
+jobs:
+  deploy:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name : Deploy
+      # run: |
+      #   docker pull tech-trend-emporium:${{ github.event.pull_request.head.sha }}
+      # aws ecs update-service --cluster ${{ secrets.ECS_CLUSTER }} --service ${{ secrets.ECS_SERVICE }} --force-new-deployment
+      # echo "Deployed version: ${{ github.event.pull_request.head.sha }}"
+      run: |
+        echo "Deploying the app"
