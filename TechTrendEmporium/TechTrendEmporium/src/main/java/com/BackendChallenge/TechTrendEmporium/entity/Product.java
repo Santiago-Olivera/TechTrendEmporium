@@ -24,7 +24,7 @@ public class Product {
 
     private String image; // image should be a string
 
-    private Integer inventoryId; // Inventory_id: an integer for inventory
+    private Integer inventory; // inventory should be an integer
 
     @Embedded
     private Rating rating; // Rating information
