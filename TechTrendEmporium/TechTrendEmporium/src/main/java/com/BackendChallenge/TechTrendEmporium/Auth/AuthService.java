@@ -14,6 +14,7 @@ import com.BackendChallenge.TechTrendEmporium.entity.Role;
 
 import lombok.RequiredArgsConstructor;
 
+import java.util.NoSuchElementException;
 import java.util.regex.Pattern;
 
 @Service
@@ -26,7 +27,7 @@ public class AuthService {
     private final AuthenticationManager authenticationManager;
 
     public ResponseEntity<Object> login(LoginRequest request) {
-        User user = userRepository.findByEmail(request.getEmail()).orElseThrow(() -> new RuntimeException("User not found"));
+        User user = userRepository.findByEmail(request.getEmail()).orElseThrow(() -> new NoSuchElementException("User not found"));
         String name = user.getUsername();
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword()));
         user.setUsername(name);
