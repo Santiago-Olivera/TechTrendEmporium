@@ -38,8 +38,8 @@ public class AuthService {
             userRepository.save(user);
         }
         String token = jwtService.getToken(user);
-        user.setLogged(true);
-        userRepository.save(user);
+//        user.setLogged(true);
+//        userRepository.save(user);
         return ResponseEntity.ok(AuthResponse.builder()
                 .token(token)
                 .email(user.getEmail())

@@ -54,6 +54,22 @@ public class ProductServiceTest {
         // Verify that correct products were returned
         assertEquals(2, retrievedProducts.size()); // Assuming two products were mocked
     }
+
+    @Test
+    public void testGetProductById() {
+        // Mock the behavior of productRepository.findById()
+        Product product = new Product();
+        when(productRepository.findById(1L)).thenReturn(java.util.Optional.of(product));
+
+        // Call the method under test
+        Product retrievedProduct = productService.getProductById(1L);
+
+        // Verify that findById() method was called
+        verify(productRepository, times(1)).findById(1L);
+
+        // Verify that correct product was returned
+        assertEquals(product, retrievedProduct);
+    }
 }
 
 
