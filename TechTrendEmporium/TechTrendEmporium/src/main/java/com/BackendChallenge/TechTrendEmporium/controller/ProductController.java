@@ -27,4 +27,5 @@ public class ProductController {
         productService.fetchAndSaveProducts();
         return "Products fetched and saved successfully.";
     }
+
 }
