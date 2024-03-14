@@ -43,7 +43,7 @@ public class AuthServiceTest {
     @Test
     public void loginTest() {
         LoginRequest request = new LoginRequest();
-        request.setEmail("testAuth1@mail.com");
+//        request.setEmail("testAuth1@mail.com");
         request.setPassword("testAuth1");
         AuthResponse authResponse = new AuthResponse();
         ResponseEntity<Object> responseEntity = new ResponseEntity<>(authResponse, HttpStatus.OK);
@@ -52,21 +52,12 @@ public class AuthServiceTest {
         user.setPassword(request.getPassword());
         user.setLogged(false);
         when(userRepository.findByEmail(any())).thenReturn(Optional.of(user));
-        when(authService.login(request)).thenReturn(responseEntity);
-//        when()
         ResponseEntity<Object> response = authService.login(request);
         assertEquals(responseEntity, response);
-
-//        when(userRepository.findByEmail(request.getEmail())).thenReturn(Optional.of(user));
-//        when(authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword()))).thenReturn(null);
-//        when(jwtService.getToken(user)).thenReturn("token");
-//        when(userRepository.save(user)).thenReturn(user);
-
-//        AuthResponse authResponse = new AuthResponse();
-//        ResponseEntity<Object> responseEntity = new ResponseEntity<>(authResponse, HttpStatus.OK);
-//        when(userRepository.findByEmail(request.getEmail())).thenReturn(Optional.of(new User()));
-//        lenient().when(authService.login(request)).thenReturn(responseEntity);
-//        assertEquals(responseEntity, authService.login(request));
+        user.setLogged(true);
+        ResponseEntity<Object> response2 = authService.login(request);
+        ResponseEntity<Object> response3 = ResponseEntity.status(HttpStatus.BAD_REQUEST).body("User already logged in");
+        assertEquals(response3, response2);
     }
 
 }
