@@ -34,7 +34,7 @@ public class StoreController {
 
     @PostMapping(value = "{product_id}/reviews/add")
     public ResponseEntity<String> addReviewToProduct(@PathVariable("product_id") Long productId, @RequestBody AddReviewRequest request) {
-        Review newReview = reviewService.addReviewToProduct(request.getUser(), productId, request.getComment());
+        Review newReview = reviewService.addReviewToProduct(request.getUser(), productId, request.getComment(), request.getRating());
         if (newReview != null) {
             return ResponseEntity.ok("Review added");
         } else {

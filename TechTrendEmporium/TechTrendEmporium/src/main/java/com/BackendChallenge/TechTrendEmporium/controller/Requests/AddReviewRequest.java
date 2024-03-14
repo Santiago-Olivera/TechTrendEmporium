@@ -12,4 +12,5 @@ import lombok.NoArgsConstructor;
 public class AddReviewRequest {
     private String user;
     private String comment;
+    private Float rating;
 }

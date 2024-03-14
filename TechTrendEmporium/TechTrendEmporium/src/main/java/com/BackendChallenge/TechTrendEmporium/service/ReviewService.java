@@ -28,14 +28,25 @@ public class ReviewService {
         this.productRepository = productRepository;
     }
 
-    public Review addReviewToProduct(String username, Long productId, String review) {
+    public Review addReviewToProduct(String username, Long productId, String review, Float rating) {
         User user = userRepository.findByUsername(username).orElseThrow(() -> new RuntimeException("User not found"));
         Product product = productRepository.findById(productId).orElseThrow(() -> new RuntimeException("Product not found"));
+        Product.Rating currentRating = product.getRating();
+
+        int count = currentRating.getCount();
+        double rate = currentRating.getRate();
+        double newRate = (rate * count + rating) / (count + 1);
+
+        currentRating.setCount(count + 1);
+        currentRating.setRate(newRate);
+        product.setRating(currentRating);
+        productRepository.save(product);
 
         Review newReview = new Review();
         newReview.setUser(user);
         newReview.setProduct(product);
         newReview.setComment(review);
+        newReview.setRating(rating);
         return reviewRepository.save(newReview);
     }
 
