@@ -3,10 +3,9 @@ package com.BackendChallenge.TechTrendEmporium.controller;
 import com.BackendChallenge.TechTrendEmporium.entity.Product;
 import com.BackendChallenge.TechTrendEmporium.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,13 +17,27 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping
-    public List<Product> getAllProducts() {
-        return productService.getAllProducts();
+    public ResponseEntity<?> getProducts(
+            @RequestParam(required = false) String category,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "6") int size) {
+
+        if (category != null) {
+            List<Product> productsByCategory = productService.getProductsByCategory(category);
+            if (productsByCategory == null || productsByCategory.isEmpty()) {
+                return new ResponseEntity<>("Category not found: " + category, HttpStatus.NOT_FOUND);
+            } else {
+                return new ResponseEntity<>(productsByCategory, HttpStatus.OK);
+            }
+        } else {
+            List<Product> allProducts = productService.getAllProducts(page, size);
+            return new ResponseEntity<>(allProducts, HttpStatus.OK);
+
+        }
     }
 
-    @PostMapping("/fetch")
-    public String fetchAndSaveProducts() {
-        productService.fetchAndSaveProducts();
-        return "Products fetched and saved successfully.";
-    }
+
+
+
+
 }

@@ -21,19 +21,22 @@ public class CategoryService {
     private static final String EXTERNAL_API_URL_CATEGORIES = "https://fakestoreapi.com/products/categories";
 
     public void fetchCategoryNames() {
-        RestTemplate restTemplate = new RestTemplate();
-        String[] categoryArray = restTemplate.getForObject(EXTERNAL_API_URL_CATEGORIES, String[].class);
-        assert categoryArray != null;
+        if (categoryRepository.count() == 0) {
+            RestTemplate restTemplate = new RestTemplate();
+            String[] categoryArray = restTemplate.getForObject(EXTERNAL_API_URL_CATEGORIES, String[].class);
+            assert categoryArray != null;
 
-        List<Category> categories = new ArrayList<>();
-        for (String categoryName : categoryArray) {
-            Category category = new Category();
-            category.setName(categoryName);
-            categories.add(category);
+            List<Category> categories = new ArrayList<>();
+            for (String categoryName : categoryArray) {
+                Category category = new Category();
+                category.setName(categoryName);
+                categories.add(category);
+            }
+
+            categoryRepository.saveAll(categories);
         }
-
-        categoryRepository.saveAll(categories);
     }
+
     public List<Category> getAllCategories() {
         return categoryRepository.findAll();
     }
