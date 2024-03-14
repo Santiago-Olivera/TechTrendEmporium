@@ -24,5 +24,6 @@ public class Review {
 
     private String comment; // comment should be a string
 
+    private float rating; // rating should be a float
 }
 

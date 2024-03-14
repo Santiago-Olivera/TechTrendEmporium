@@ -24,15 +24,23 @@ public class Product {
 
     private String image; // image should be a string
 
-    private Integer inventory; // inventory should be an integer
-
     @Embedded
     private Rating rating; // Rating information
+
+    @Embedded
+    private Inventory inventory;
 
     @Data
     @Embeddable
     public static class Rating {
         private double rate;
         private int count;
+    }
+
+    @Data
+    @Embeddable
+    public static class Inventory {
+        private int total;
+        private int available;
     }
 }
