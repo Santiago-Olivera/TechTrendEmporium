@@ -1,5 +1,6 @@
 package com.BackendChallenge.TechTrendEmporium.controller;
 
+import com.BackendChallenge.TechTrendEmporium.controller.Requests.AddReviewRequest;
 import com.BackendChallenge.TechTrendEmporium.entity.Product;
 import com.BackendChallenge.TechTrendEmporium.entity.Review;
 import com.BackendChallenge.TechTrendEmporium.service.ProductService;
@@ -32,10 +33,20 @@ public class StoreController {
     }
 
     @PostMapping(value = "{product_id}/reviews/add")
-    public ResponseEntity<Product> addReviewToProduct(@PathVariable("product_id") Long productId, @RequestBody String review) {
-        Review newReview = reviewService.addReviewToProduct(productId, review);
+    public ResponseEntity<String> addReviewToProduct(@PathVariable("product_id") Long productId, @RequestBody AddReviewRequest request) {
+        Review newReview = reviewService.addReviewToProduct(request.getUser(), productId, request.getComment());
         if (newReview != null) {
-            return new ResponseEntity<>(HttpStatus.OK);
+            return ResponseEntity.ok("Review added");
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @GetMapping(value = "{product_id}/reviews")
+    public ResponseEntity<List<Object[]>> getReviewsForProduct(@PathVariable("product_id") Long productId) {
+        List<Object[]> reviews = reviewService.getReviewsByProduct(productId);
+        if (reviews != null) {
+            return new ResponseEntity<>(reviews, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
