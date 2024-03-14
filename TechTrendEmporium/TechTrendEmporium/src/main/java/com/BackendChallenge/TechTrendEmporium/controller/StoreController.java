@@ -4,6 +4,7 @@ import com.BackendChallenge.TechTrendEmporium.controller.Requests.AddReviewReque
 import com.BackendChallenge.TechTrendEmporium.entity.Product;
 import com.BackendChallenge.TechTrendEmporium.entity.Review;
 import com.BackendChallenge.TechTrendEmporium.service.ProductService;
+import com.BackendChallenge.TechTrendEmporium.service.Response.ReviewResponse;
 import com.BackendChallenge.TechTrendEmporium.service.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,17 +39,17 @@ public class StoreController {
         if (newReview != null) {
             return ResponseEntity.ok("Review added");
         } else {
-            return ResponseEntity.notFound().build();
+            return ResponseEntity.ok("User or product not found. Review not added.");
         }
     }
 
     @GetMapping(value = "{product_id}/reviews")
-    public ResponseEntity<List<Object[]>> getReviewsForProduct(@PathVariable("product_id") Long productId) {
-        List<Object[]> reviews = reviewService.getReviewsByProduct(productId);
-        if (reviews != null) {
-            return new ResponseEntity<>(reviews, HttpStatus.OK);
+    public ResponseEntity<?> getReviewsForProduct(@PathVariable("product_id") Long productId) {
+        List<ReviewResponse> reviews = reviewService.getReviewsByProduct(productId);
+        if (reviews == null || reviews.isEmpty()) {
+            return new ResponseEntity<>("No reviews for this product", HttpStatus.OK);
         } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(reviews, HttpStatus.OK);
         }
     }
 }

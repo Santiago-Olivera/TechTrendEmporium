@@ -7,10 +7,12 @@ import com.BackendChallenge.TechTrendEmporium.entity.User;
 import com.BackendChallenge.TechTrendEmporium.repository.ProductRepository;
 import com.BackendChallenge.TechTrendEmporium.repository.ReviewRepository;
 import com.BackendChallenge.TechTrendEmporium.repository.UserRepository;
+import com.BackendChallenge.TechTrendEmporium.service.Response.ReviewResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -50,7 +52,20 @@ public class ReviewService {
         return reviewRepository.save(newReview);
     }
 
-    public List<Object[]> getReviewsByProduct(Long productId) {
-        return reviewRepository.findReviewsByProductId(productId);
+    public List<ReviewResponse> getReviewsByProduct(Long productId) {
+        List<Object[]> reviews = reviewRepository.findReviewsByProductId(productId);
+        if (reviews == null) {
+            return null;
+        }
+        List<ReviewResponse> response = new ArrayList<>();
+        for (Object[] review : reviews) {
+            ReviewResponse reviewResponse = new ReviewResponse();
+            reviewResponse.setUser((String) review[0]);
+            reviewResponse.setProductId((Long) review[1]);
+            reviewResponse.setComment((String) review[2]);
+            reviewResponse.setRating((Float) review[3]);
+            response.add(reviewResponse);
+        }
+        return response;
     }
 }
