@@ -19,6 +19,8 @@ public class Product {
     @Column(name = "category")
     private String category; // Treat category as a string
     // category_id: connect with the category table
+    @Column(name = "category_id")
+    private Long categoryId ;
 
     private String description; // description should be a string
 

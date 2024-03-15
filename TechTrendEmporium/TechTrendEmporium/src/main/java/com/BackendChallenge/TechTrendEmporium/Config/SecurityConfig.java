@@ -25,6 +25,14 @@ public class SecurityConfig {
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
     private final AuthenticationProvider authProvider;
 
+    private static final String[] AUTH_WHITELIST = {
+            "/api/v1/auth/**",
+            "/v3/api-docs/**",
+            "v3/api-docs.yaml",
+            "/doc/swagger-ui/**",
+            "/doc/swagger-ui.html"
+    };
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception
     {
@@ -35,6 +43,7 @@ public class SecurityConfig {
                                 .requestMatchers(HttpMethod.POST,"/api/auth").permitAll()
                                 .requestMatchers(HttpMethod.POST,"/api/login").permitAll()
                                 .requestMatchers(HttpMethod.POST,"/api/logout").permitAll()
+                                .requestMatchers(AUTH_WHITELIST).permitAll()
                                 .requestMatchers(HttpMethod.POST,"/api/admin/auth").hasAuthority("ADMIN")
                                 .anyRequest().authenticated()
                 )
