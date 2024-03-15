@@ -22,5 +22,4 @@ public class WishlistProduct {
     @JoinColumn(name = "product_id")
     private Product product; // Connects the wishlist_product table with the product table
 
-    private int quantity; // quantity that is an integer
 }
