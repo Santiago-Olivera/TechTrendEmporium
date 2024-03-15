@@ -19,11 +19,6 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
-    @GetMapping("/fetch")
-    public ResponseEntity<String> saveAllCategories() {
-        categoryService.fetchCategoryNames();
-        return new ResponseEntity<>("Categories saved successfully", HttpStatus.OK);
-    }
     @GetMapping
     public List<Category> getAllCategories() {
         return categoryService.getAllCategories();
