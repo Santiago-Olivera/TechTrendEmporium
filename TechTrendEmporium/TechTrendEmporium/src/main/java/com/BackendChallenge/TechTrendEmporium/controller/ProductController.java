@@ -19,10 +19,18 @@ public class ProductController {
     @GetMapping
     public ResponseEntity<?> getProducts(
             @RequestParam(required = false) String category,
+            @RequestParam(required = false) String price,
+            @RequestParam(required = false) String title,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "6") int size) {
 
-        if (category != null) {
+        if (price != null) {
+            List<Product> sortedProductsByPrice = productService.getAllProductsSortedByPrice(price);
+            return new ResponseEntity<>(sortedProductsByPrice, HttpStatus.OK);
+        } else if (title != null) {
+            List<Product> sortedProductsByTitle = productService.getAllProductsSortedByTitle(title);
+            return new ResponseEntity<>(sortedProductsByTitle, HttpStatus.OK);
+        } else if (category != null) {
             List<Product> productsByCategory = productService.getProductsByCategory(category);
             if (productsByCategory == null || productsByCategory.isEmpty()) {
                 return new ResponseEntity<>("Category not found: " + category, HttpStatus.NOT_FOUND);
@@ -32,12 +40,7 @@ public class ProductController {
         } else {
             List<Product> allProducts = productService.getAllProducts(page, size);
             return new ResponseEntity<>(allProducts, HttpStatus.OK);
-
         }
     }
-
-
-
-
-
 }
+

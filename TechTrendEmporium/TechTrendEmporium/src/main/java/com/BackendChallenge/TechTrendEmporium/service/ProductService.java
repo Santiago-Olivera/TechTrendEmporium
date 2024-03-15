@@ -7,6 +7,8 @@ import com.BackendChallenge.TechTrendEmporium.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -58,12 +60,31 @@ public class ProductService {
         return productPage.getContent();
     }
 
+
     public List<Product> getProductsByCategory(String category) {
         return productRepository.findByCategory(category);
     }
     public Product getProductById(Long productId) {
         return productRepository.findById(productId).orElse(null);
     }
+
+    public List<Product> getAllProductsSortedByPrice(String sortOrder) {
+        Sort sort = Sort.by("price");
+        if (sortOrder != null && sortOrder.equalsIgnoreCase("desc")) {
+            sort = sort.descending();
+        }
+        return productRepository.findAll(sort);
+    }
+
+    public List<Product> getAllProductsSortedByTitle(String sortBy) {
+        Sort.Direction direction = Sort.Direction.ASC;
+        if (sortBy != null && sortBy.equalsIgnoreCase("desc")) {
+            direction = Sort.Direction.DESC;
+        }
+        Sort sort = Sort.by(direction, "title"); // Sort by title field
+        return productRepository.findAll(sort);
+    }
+
 
 }
 
