@@ -19,5 +19,7 @@ public class Sale {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cart_id", unique = true)
     private Cart cart; // cart_id: connect with the cart table (one-to-one relationship)
+
+    private String Status;
 }
 

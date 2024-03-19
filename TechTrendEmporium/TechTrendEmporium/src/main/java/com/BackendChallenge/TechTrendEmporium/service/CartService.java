@@ -1,9 +1,6 @@
 package com.BackendChallenge.TechTrendEmporium.service;
 
-import com.BackendChallenge.TechTrendEmporium.entity.Cart;
-import com.BackendChallenge.TechTrendEmporium.entity.CartProduct;
-import com.BackendChallenge.TechTrendEmporium.entity.Product;
-import com.BackendChallenge.TechTrendEmporium.entity.User;
+import com.BackendChallenge.TechTrendEmporium.entity.*;
 import com.BackendChallenge.TechTrendEmporium.repository.*;
 import com.BackendChallenge.TechTrendEmporium.service.Response.CartResponse;
 import com.BackendChallenge.TechTrendEmporium.service.Response.ProductQuantity;
@@ -80,6 +77,8 @@ public class CartService {
         }
         response.setUser_id(userId);
         response.setProducts(products);
+        Optional<Coupon> coupon = Optional.ofNullable(cart.getCoupon());
+        coupon.ifPresent(response::setCoupon);
         return response;
     }
 
@@ -100,7 +99,16 @@ public class CartService {
         return true;
     }
 
-    public boolean applyCoupon(Long userId) {
-        return true;
+    public boolean applyCoupon(Long userId, String couponName) {
+        Cart cart = existsCart(userId);
+        Optional<User> user = userRepository.findById(userId);
+        if (user.isPresent()) {
+            if (couponRepository.findByName(couponName).isPresent()) {
+                cart.setCoupon(couponRepository.findByName(couponName).get());
+                cartRepository.save(cart);
+                return true;
+            }
+        }
+        return false;
     }
 }

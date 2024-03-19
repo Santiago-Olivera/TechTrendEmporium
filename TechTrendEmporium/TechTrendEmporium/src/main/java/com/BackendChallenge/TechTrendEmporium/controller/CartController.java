@@ -1,5 +1,6 @@
 package com.BackendChallenge.TechTrendEmporium.controller;
 
+import com.BackendChallenge.TechTrendEmporium.controller.Requests.ApplyCouponRequest;
 import com.BackendChallenge.TechTrendEmporium.controller.Requests.CartRequest;
 import com.BackendChallenge.TechTrendEmporium.service.CartService;
 import com.BackendChallenge.TechTrendEmporium.service.Response.CartResponse;
@@ -51,9 +52,9 @@ public class CartController {
         }
     }
 
-    @PostMapping(value = "applyCoupon")
-    public ResponseEntity<?> applyCoupon(@RequestBody CartRequest request){
-        boolean applied = cartService.applyCoupon(request.getUser_id());
+    @PostMapping(value = "apply-coupon")
+    public ResponseEntity<?> applyCoupon(@RequestBody ApplyCouponRequest request){
+        boolean applied = cartService.applyCoupon(request.getUser_id(), request.getCoupon_code());
         if (applied) {
             return ResponseEntity.ok("Coupon applied successfully");
         } else {

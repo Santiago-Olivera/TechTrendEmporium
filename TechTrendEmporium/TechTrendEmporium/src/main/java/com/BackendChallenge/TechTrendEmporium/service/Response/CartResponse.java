@@ -1,5 +1,6 @@
 package com.BackendChallenge.TechTrendEmporium.service.Response;
 
+import com.BackendChallenge.TechTrendEmporium.entity.Coupon;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,4 +15,5 @@ import java.util.List;
 public class CartResponse {
     private List<ProductQuantity> products;
     private Long user_id;
+    private Coupon coupon;
 }
