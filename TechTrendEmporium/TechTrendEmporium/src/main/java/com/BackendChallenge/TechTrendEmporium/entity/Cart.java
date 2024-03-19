@@ -18,8 +18,8 @@ public class Cart {
     @JoinColumn(name = "user_id")
     private User user; // user_id: connect with the user table
 
-    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
-    private Set<CouponCart> couponCart; // Connects with the coupon_cart table
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "coupon_id")
+    private Coupon coupon;
 
-    // Other attributes as needed
 }
