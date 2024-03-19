@@ -6,6 +6,7 @@ import com.BackendChallenge.TechTrendEmporium.entity.Product;
 import com.BackendChallenge.TechTrendEmporium.entity.User;
 import com.BackendChallenge.TechTrendEmporium.repository.*;
 import com.BackendChallenge.TechTrendEmporium.service.Response.CartResponse;
+import com.BackendChallenge.TechTrendEmporium.service.Response.ProductQuantity;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
@@ -30,25 +31,39 @@ public class CartService {
     @Autowired
     private CartProductRepository cartProductRepository;
 
-    public boolean addProductToCart(Long userId, Long productId) {
+    public boolean addProductToCart(Long userId, Long productId, int quantity) {
         Cart cart = existsCart(userId);
         Optional<Product> product = productRepository.findById(productId);
         Optional<CartProduct> cartProductV = Optional.ofNullable(cartProductRepository.findByCartIdAndProductId(cart.getId(), productId));
         CartProduct cartProduct = new CartProduct();
-        if (product.isPresent() && cartProductV.isEmpty()) {
+        if (product.isPresent()) {
             cartProduct.setCart(cart);
             cartProduct.setProduct(product.get());
-            cartProductRepository.save(cartProduct);
+            if (cartProductV.isPresent()) {
+                cartProduct.setQuantity(cartProductV.get().getQuantity() + quantity);
+                if (cartProduct.getQuantity() > product.get().getInventory().getAvailable()) {
+                    return false;
+                }
+                cartProductRepository.updateQuantity(cartProduct.getQuantity(), cartProductV.get().getId());
+            } else {
+                cartProduct.setQuantity(quantity);
+                cartProductRepository.save(cartProduct);
+            }
             return true;
         }
         return false;
     }
 
-    public boolean deleteProductFromCart(Long userId, Long productId) {
+    public boolean deleteProductFromCart(Long userId, Long productId, int quantity) {
         Cart cart = existsCart(userId);
         Optional<CartProduct> cartProduct = Optional.ofNullable(cartProductRepository.findByCartIdAndProductId(cart.getId(), productId));
         if (cartProduct.isPresent()) {
-            cartProductRepository.delete(cartProduct.get());
+            if (cartProduct.get().getQuantity() <= quantity) {
+                cartProductRepository.delete(cartProduct.get());
+            } else {
+                cartProduct.get().setQuantity(cartProduct.get().getQuantity() - quantity);
+                cartProductRepository.updateQuantity(cartProduct.get().getQuantity(), cartProduct.get().getId());
+            }
             return true;
         }
         return false;
@@ -58,9 +73,10 @@ public class CartService {
         Cart cart = existsCart(userId);
         CartResponse response = new CartResponse();
         List<CartProduct> cartProducts = cartProductRepository.findByCartId(cart.getId());
-        List<Long> products = new ArrayList<>();
+        List<ProductQuantity> products = new ArrayList<>();
         for (CartProduct cartProduct : cartProducts) {
-            products.add(cartProduct.getProduct().getId());
+            ProductQuantity productQuantity = new ProductQuantity(cartProduct.getProduct().getId(), cartProduct.getQuantity());
+            products.add(productQuantity);
         }
         response.setUser_id(userId);
         response.setProducts(products);
@@ -78,5 +94,13 @@ public class CartService {
             cartRepository.save(newCart);
             return newCart;
         }
+    }
+
+    public boolean checkout(Long userId) {
+        return true;
+    }
+
+    public boolean applyCoupon(Long userId) {
+        return true;
     }
 }
