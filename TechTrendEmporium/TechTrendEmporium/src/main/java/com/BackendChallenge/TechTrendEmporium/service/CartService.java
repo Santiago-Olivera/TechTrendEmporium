@@ -141,7 +141,8 @@ public class CartService {
         saleRepository.save(sale);
         response.setProducts(products);
         response.setUser_id(userId);
-        response.setCoupon(cart.getCoupon());
+        Optional<Coupon> coupon = Optional.ofNullable(cart.getCoupon());
+        coupon.ifPresent(response::setCoupon);
         response.setTotal_before_discount(totalBeforeDiscount);
         response.setTotal_after_discount(totalAfterDiscount);
         response.setShipping_cost(shipping);
