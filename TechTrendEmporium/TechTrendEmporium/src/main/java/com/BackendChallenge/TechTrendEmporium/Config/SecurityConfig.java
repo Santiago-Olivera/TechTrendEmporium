@@ -47,6 +47,8 @@ public class SecurityConfig {
                                 .requestMatchers(HttpMethod.POST,"/api/admin/**").hasAuthority("ADMIN")
                                 .requestMatchers(HttpMethod.GET,"/api/admin/**").hasAuthority("ADMIN")
                                 .requestMatchers(HttpMethod.DELETE,"/api/admin/**").hasAuthority("ADMIN")
+                                .requestMatchers(HttpMethod.POST,"/api/employee/**").hasAuthority("EMPLOYEE")
+                                .requestMatchers(HttpMethod.GET,"/api/employee/**").hasAuthority("EMPLOYEE")
                                 .anyRequest().authenticated()
                 )
                 .sessionManagement(sessionManager->
