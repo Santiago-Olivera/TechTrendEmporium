@@ -14,7 +14,7 @@ public class Sale {
 
     private String date; // date: a string
 
-    private float total; // total: a float
+    private double total; // total: a float
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cart_id", unique = true)

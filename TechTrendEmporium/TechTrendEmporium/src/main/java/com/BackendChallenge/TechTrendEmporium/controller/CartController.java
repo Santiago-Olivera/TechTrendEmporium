@@ -4,6 +4,7 @@ import com.BackendChallenge.TechTrendEmporium.controller.Requests.ApplyCouponReq
 import com.BackendChallenge.TechTrendEmporium.controller.Requests.CartRequest;
 import com.BackendChallenge.TechTrendEmporium.service.CartService;
 import com.BackendChallenge.TechTrendEmporium.service.Response.CartResponse;
+import com.BackendChallenge.TechTrendEmporium.service.Response.CheckoutResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -44,11 +45,11 @@ public class CartController {
 
     @PostMapping(value = "checkout")
     public ResponseEntity<?> checkout(@RequestBody CartRequest request){
-        boolean checkedOut = cartService.checkout(request.getUser_id());
-        if (checkedOut) {
-            return ResponseEntity.ok("Checkout successful");
+        CheckoutResponse checkedOut = cartService.checkout(request.getUser_id());
+        if (checkedOut.getMessage().equals("Checkout successful")) {
+            return ResponseEntity.ok(checkedOut);
         } else {
-            return ResponseEntity.badRequest().body("Checkout failed");
+            return ResponseEntity.badRequest().body(checkedOut.getMessage());
         }
     }
 
