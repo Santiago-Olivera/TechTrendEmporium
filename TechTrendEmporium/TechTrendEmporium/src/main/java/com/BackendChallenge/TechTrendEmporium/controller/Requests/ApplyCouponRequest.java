@@ -9,8 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class CartRequest {
+public class ApplyCouponRequest {
     private Long user_id;
-    private Long product_id;
-    private int quantity;
+    private String coupon_code;
 }

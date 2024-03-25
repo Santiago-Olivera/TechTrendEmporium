@@ -1,4 +1,4 @@
-package com.BackendChallenge.TechTrendEmporium.controller.Requests;
+package com.BackendChallenge.TechTrendEmporium.service.Response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,10 +7,9 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
-public class CartRequest {
-    private Long user_id;
-    private Long product_id;
+@AllArgsConstructor
+public class ProductQuantity {
+    private Long productId;
     private int quantity;
 }
