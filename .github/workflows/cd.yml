@@ -31,8 +31,8 @@ jobs:
       run: |
         echo "Building the app"
         docker build -t tech-trend-emporium:${{ github.sha }} ./TechTrendEmporium/TechTrendEmporium/
-        docker tag tech-trend-emporium:${{ github.sha }} ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/tte:${{ github.sha }}
-        docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/tte:${{ github.sha }}
+        docker tag tech-trend-emporium:${{ github.sha }} ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/tte:latest
+        docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/tte:latest
         echo "Built and pushed version: ${{ github.sha }}"
     
     - name : Deploy
