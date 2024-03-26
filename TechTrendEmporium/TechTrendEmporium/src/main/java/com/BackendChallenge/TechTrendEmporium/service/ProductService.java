@@ -1,9 +1,13 @@
 package com.BackendChallenge.TechTrendEmporium.service;
 
+import com.BackendChallenge.TechTrendEmporium.dto.ProductDTO;
 import com.BackendChallenge.TechTrendEmporium.entity.Category;
 import com.BackendChallenge.TechTrendEmporium.entity.Product;
+import com.BackendChallenge.TechTrendEmporium.entity.ProductStatus;
+import com.BackendChallenge.TechTrendEmporium.entity.ProductUpdateRequest;
 import com.BackendChallenge.TechTrendEmporium.repository.CategoryRepository;
 import com.BackendChallenge.TechTrendEmporium.repository.ProductRepository;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -12,8 +16,13 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Collections;
+import java.util.NoSuchElementException;
+
+
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductService {
@@ -54,19 +63,37 @@ public class ProductService {
             productRepository.saveAll(Arrays.asList(products));
         }
     }
+    public List<Product> getPaginatedList(List<Product> productList, int page, int size) {
+        int startIndex = page * size;
+        int endIndex = Math.min(startIndex + size, productList.size());
+
+        if (startIndex >= productList.size()) {
+            return Collections.emptyList(); // Return empty list if startIndex exceeds list size
+        }
+
+        return productList.subList(startIndex, endIndex);
+    }
+    public ProductDTO convertToDTO(Product product) {
+        ProductDTO productDTO = new ProductDTO();
+        BeanUtils.copyProperties(product, productDTO);
+        productDTO.setRating(new ProductDTO.RatingDTO(product.getRating().getRate(), product.getRating().getCount()));
+        productDTO.setInventory(new ProductDTO.InventoryDTO(product.getInventory().getTotal(), product.getInventory().getAvailable()));
+        return productDTO;
+    }
+
 
     public List<Product> getAllProducts(int page, int size) {
         Page<Product> productPage = productRepository.findAll(PageRequest.of(page, size));
         return productPage.getContent();
     }
 
-
-    public List<Product> getProductsByCategory(String category) {
-        return productRepository.findByCategory(category);
-    }
     public Product getProductById(Long productId) {
         return productRepository.findById(productId).orElse(null);
     }
+    public List<Product> getProductsByCategory(String category) {
+        return productRepository.findByCategory(category);
+    }
+
 
     public List<Product> getAllProductsSortedByPrice(String sortOrder) {
         Sort sort = Sort.by("price");
@@ -75,6 +102,7 @@ public class ProductService {
         }
         return productRepository.findAll(sort);
     }
+
 
     public List<Product> getAllProductsSortedByTitle(String sortBy) {
         Sort.Direction direction = Sort.Direction.ASC;
@@ -86,5 +114,50 @@ public class ProductService {
     }
 
 
+    public List<Product> filterApprovedProducts(List<Product> products) {
+        return products.stream()
+                .filter(product -> product.getStatus() == null || product.getStatus() == ProductStatus.APPROVED)
+                .collect(Collectors.toList());
+    }
+
+
+    public Product createProduct(Product product) {
+        return productRepository.save(product);
+    }
+
+    public void deleteProduct(Long productId) {
+        productRepository.deleteById(productId);
+    }
+
+    public void pendingDeleteProduct(Long productId) {
+        Product product = productRepository.findById(productId).orElse(null);
+        if (product != null) {
+            product.setStatus(ProductStatus.PENDING_DELETE);
+            productRepository.save(product);
+        }
+    }
+    public void updateProduct(ProductUpdateRequest request) {
+        Product existingProduct = productRepository.findById(request.getId())
+                .orElseThrow(NoSuchElementException::new);
+        existingProduct.setTitle(request.getTitle());
+        existingProduct.setPrice(request.getPrice());
+        existingProduct.setCategory(request.getCategory());
+        existingProduct.setDescription(request.getDescription());
+        existingProduct.setImage(request.getImage());
+
+        // Convert ProductUpdateRequest.Rating to Product.Rating
+        Product.Rating productRating = new Product.Rating();
+        productRating.setRate(request.getRating().getRate());
+        productRating.setCount(request.getRating().getCount());
+        existingProduct.setRating(productRating);
+
+        // Convert ProductUpdateRequest.Inventory to Product.Inventory
+        Product.Inventory productInventory = new Product.Inventory();
+        productInventory.setTotal(request.getInventory().getTotal());
+        productInventory.setAvailable(request.getInventory().getAvailable());
+        existingProduct.setInventory(productInventory);
+
+        productRepository.save(existingProduct);
+    }
 }
 

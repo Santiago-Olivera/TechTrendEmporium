@@ -32,6 +32,7 @@ public class Product {
     @Embedded
     private Inventory inventory;
 
+
     @Data
     @Embeddable
     public static class Rating {
@@ -45,4 +46,8 @@ public class Product {
         private int total;
         private int available;
     }
+
+
+    @Enumerated(EnumType.STRING)
+    private ProductStatus status;
 }

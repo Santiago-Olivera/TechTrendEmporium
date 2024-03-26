@@ -1,6 +1,7 @@
 package com.BackendChallenge.TechTrendEmporium.controller;
 
 import com.BackendChallenge.TechTrendEmporium.controller.Requests.AddReviewRequest;
+import com.BackendChallenge.TechTrendEmporium.dto.ProductDTO;
 import com.BackendChallenge.TechTrendEmporium.entity.Product;
 import com.BackendChallenge.TechTrendEmporium.entity.Review;
 import com.BackendChallenge.TechTrendEmporium.service.ProductService;
@@ -24,14 +25,16 @@ public class StoreController {
     private ReviewService reviewService;
 
     @GetMapping(value = "{product_id}")
-    public ResponseEntity<Product> getProductById(@PathVariable("product_id") Long productId) {
+    public ResponseEntity<ProductDTO> getProductById(@PathVariable("product_id") Long productId) {
         Product product = productService.getProductById(productId);
         if (product != null) {
-            return new ResponseEntity<>(product, HttpStatus.OK);
+            ProductDTO productDTO = productService.convertToDTO(product);
+            return new ResponseEntity<>(productDTO, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+
 
     @PostMapping(value = "{product_id}/reviews/add")
     public ResponseEntity<String> addReviewToProduct(@PathVariable("product_id") Long productId, @RequestBody AddReviewRequest request) {
