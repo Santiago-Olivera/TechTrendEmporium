@@ -13,6 +13,8 @@ public class Category {
 
     private String name; // category name
 
+    @Enumerated(EnumType.STRING)
+    private CategoryStatus status;
     // Constructors, getters, and setters
 }
 
