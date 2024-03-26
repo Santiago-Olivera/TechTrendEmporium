@@ -54,7 +54,6 @@ public class AuthService {
         String regexEmail = "^(.+)@(.+)$";
         String regexUsername = "^[a-zA-Z0-9_]{5,20}$";
         String regexPassword = "^[a-zA-Z0-9_]{8,20}$";
-
         String email = request.getEmail();
         String username = request.getUsername();
         String password = request.getPassword();
