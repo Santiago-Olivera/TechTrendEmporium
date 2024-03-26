@@ -20,5 +20,7 @@ public class CartProduct {
     @JoinColumn(name = "product_id")
     private Product product; // product_id: connect with the product table
 
+    private Integer quantity;
+
 }
 
