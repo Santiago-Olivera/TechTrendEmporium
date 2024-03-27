@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.BackendChallenge.TechTrendEmporium.service.CategoryServiceTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.203 s -- in com.BackendChallenge.TechTrendEmporium.service.CategoryServiceTest
+=======
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.736 s -- in com.BackendChallenge.TechTrendEmporium.service.CategoryServiceTest
+>>>>>>> main
