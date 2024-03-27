@@ -32,10 +32,12 @@ C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\
 C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\service\CartService.java
 C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\service\Response\CheckoutResponse.java
 C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\Auth\AuthResponse.java
+C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\service\UserService.java
 C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\entity\Category.java
 C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\repository\UserRepository.java
 C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\entity\User.java
 C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\repository\ReviewRepository.java
+C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\controller\Requests\UserRequest.java
 C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\entity\Coupon.java
 C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\repository\WishlistProductRepository.java
 C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\controller\CartController.java
@@ -44,7 +46,6 @@ C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\
 C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\controller\Requests\WishlistRequest.java
 C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\controller\StoreController.java
 C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\entity\Review.java
-C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\controller\Wishlist.java
 C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\Auth\LoginRequest.java
 C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\Auth\AuthController.java
 C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\repository\CartProductRepository.java
@@ -52,6 +53,7 @@ C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\
 C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\service\Response\CartResponse.java
 C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\controller\CategoryController.java
 C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\dto\ReviewJobRequestDTO.java
+C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\service\Response\GetUsersResponse.java
 C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\entity\Sale.java
 C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\entity\CategoryUpdateRequest.java
 C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\service\CategoryService.java
@@ -62,6 +64,7 @@ C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\
 C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\entity\Wishlist.java
 C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\service\CouponService.java
 C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\Config\SecurityConfig.java
+C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\controller\UsersController.java
 C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\dto\ProductDTO.java
 C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\entity\Cart.java
 C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\main\java\com\BackendChallenge\TechTrendEmporium\controller\Requests\AddCouponRequest.java

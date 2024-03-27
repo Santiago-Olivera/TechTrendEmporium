@@ -10,4 +10,6 @@ import java.util.List;
 @Repository
 public interface SaleRepository extends JpaRepository<Sale, Long> {
     List<Sale> findByCartUserId(Long userId);
+
+    Iterable<? extends Sale> findByCartId(Long id);
 }
