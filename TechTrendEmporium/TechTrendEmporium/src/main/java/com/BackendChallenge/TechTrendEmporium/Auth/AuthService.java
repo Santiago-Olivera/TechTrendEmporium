@@ -14,6 +14,8 @@ import com.BackendChallenge.TechTrendEmporium.entity.Role;
 
 import lombok.RequiredArgsConstructor;
 
+import java.util.Locale;
+import java.util.Objects;
 import java.util.regex.Pattern;
 
 @Service
@@ -80,21 +82,43 @@ public class AuthService {
                 .build());
     }
 
-    public ResponseEntity<Object> registerEmployee(RegisterEmployeeRequest request) {
-        User user = User.builder()
-                .email(request.getEmail())
-                .username(request.getUsername())
-                .password(passwordEncoder.encode( request.getPassword()))
-                .role(Role.EMPLOYEE)
-                .build();
+    public ResponseEntity<Object> registerUser(RegisterEmployeeRequest request) {
+        if (userRepository.findByEmail(request.getEmail()).isPresent() || userRepository.findByUsername(request.getUsername()).isPresent()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Email or username already exists");
+        }
+        if (Objects.equals(request.getRole().toLowerCase(), "employee")) {
+            User user = User.builder()
+                    .email(request.getEmail())
+                    .username(request.getUsername())
+                    .password(passwordEncoder.encode( request.getPassword()))
+                    .role(Role.EMPLOYEE)
+                    .build();
+            userRepository.save(user);
 
-        userRepository.save(user);
+            return ResponseEntity.status(HttpStatus.CREATED).body(AuthResponse.builder()
+                    .token(jwtService.getToken(user))
+                    .email(user.getEmail())
+                    .username(user.getUsername())
+                    .build());
+        }
+        else if (Objects.equals(request.getRole().toLowerCase(), "shopper")) {
+            User user = User.builder()
+                    .email(request.getEmail())
+                    .username(request.getUsername())
+                    .password(passwordEncoder.encode( request.getPassword()))
+                    .role(Role.SHOPPER)
+                    .build();
+            userRepository.save(user);
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(AuthResponse.builder()
-                .token(jwtService.getToken(user))
-                .email(user.getEmail())
-                .username(user.getUsername())
-                .build());
+            return ResponseEntity.status(HttpStatus.CREATED).body(AuthResponse.builder()
+                    .token(jwtService.getToken(user))
+                    .email(user.getEmail())
+                    .username(user.getUsername())
+                    .build());
+        }
+        else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid role");
+        }
     }
 
     public ResponseEntity<Object> logout(LogoutRequest request) {

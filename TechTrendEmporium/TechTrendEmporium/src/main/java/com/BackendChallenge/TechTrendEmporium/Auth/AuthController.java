@@ -31,8 +31,7 @@ public class AuthController {
     @PostMapping(value = "admin/auth")
     public Object registerEmployee(@RequestBody RegisterEmployeeRequest request)
     {
-        ResponseEntity<Object> responseEntity = authService.registerEmployee(request);
-        return responseEntity.getBody();
+        return authService.registerUser(request);
     }
 
     @PostMapping(value = "logout")
