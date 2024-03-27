@@ -42,7 +42,7 @@ public class ProductController {
                 return new ResponseEntity<>(Collections.emptyList(), HttpStatus.NOT_FOUND);
             }
         } else {
-            products = productService.getAllProducts(page, size);
+            products = productService.getAllProducts();
         }
 
         List<Product> filteredProducts = productService.filterApprovedProducts(products);

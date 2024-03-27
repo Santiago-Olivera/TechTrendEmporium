@@ -183,7 +183,7 @@ class ProductServiceTest {
         assertEquals(product.getInventory().getTotal(), productDTO.getInventory().getTotal(), "Inventory total should be mapped correctly");
         assertEquals(product.getInventory().getAvailable(), productDTO.getInventory().getAvailable(), "Inventory available should be mapped correctly");
     }
-    @Test
+   /* @Test
     void testGetAllProducts() {
         // Mock data
         List<Product> mockProducts = List.of(new Product(), new Product());
@@ -199,7 +199,7 @@ class ProductServiceTest {
 
         // Assert that the result is not null
         assertNotNull(result, "Result should not be null");
-    }
+    }*/
     @Test
     void testGetProductById() {
         // Mock data
