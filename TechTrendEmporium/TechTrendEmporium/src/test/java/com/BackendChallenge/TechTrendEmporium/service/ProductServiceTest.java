@@ -195,7 +195,7 @@ class ProductServiceTest {
                 .thenReturn(new PageImpl<>(mockProducts));
 
         // Call the method under test
-        List<Product> result = productService.getAllProducts(page, size);
+        List<Product> result = productService.getAllProducts();
 
         // Assert that the result is not null
         assertNotNull(result, "Result should not be null");

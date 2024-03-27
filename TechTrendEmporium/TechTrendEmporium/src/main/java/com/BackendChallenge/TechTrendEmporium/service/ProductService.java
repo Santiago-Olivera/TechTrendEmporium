@@ -82,9 +82,8 @@ public class ProductService {
     }
 
 
-    public List<Product> getAllProducts(int page, int size) {
-        Page<Product> productPage = productRepository.findAll(PageRequest.of(page, size));
-        return productPage.getContent();
+    public List<Product> getAllProducts() {
+        return productRepository.findAll();
     }
 
     public Product getProductById(Long productId) {
