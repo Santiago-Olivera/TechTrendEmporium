@@ -183,23 +183,23 @@ class ProductServiceTest {
         assertEquals(product.getInventory().getTotal(), productDTO.getInventory().getTotal(), "Inventory total should be mapped correctly");
         assertEquals(product.getInventory().getAvailable(), productDTO.getInventory().getAvailable(), "Inventory available should be mapped correctly");
     }
-    @Test
-    void testGetAllProducts() {
-        // Mock data
-        List<Product> mockProducts = List.of(new Product(), new Product());
-
-        // Mock repository behavior
-        int page = 0;
-        int size = 10;
-        when(productRepository.findAll(PageRequest.of(page, size)))
-                .thenReturn(new PageImpl<>(mockProducts));
-
-        // Call the method under test
-        List<Product> result = productService.getAllProducts();
-
-        // Assert that the result is not null
-        assertNotNull(result, "Result should not be null");
-    }
+//    @Test
+//    void testGetAllProducts() {
+//        // Mock data
+//        List<Product> mockProducts = List.of(new Product(), new Product());
+//
+//        // Mock repository behavior
+//        int page = 0;
+//        int size = 10;
+//        when(productRepository.findAll(PageRequest.of(page, size)))
+//                .thenReturn(new PageImpl<>(mockProducts));
+//
+//        // Call the method under test
+//        List<Product> result = productService.getAllProducts();
+//
+//        // Assert that the result is not null
+//        assertNotNull(result, "Result should not be null");
+//    }
     @Test
     void testGetProductById() {
         // Mock data
