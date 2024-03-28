@@ -1,3 +1,4 @@
+com\BackendChallenge\TechTrendEmporium\service\UserService.class
 com\BackendChallenge\TechTrendEmporium\entity\Product.class
 com\BackendChallenge\TechTrendEmporium\repository\CartRepository.class
 com\BackendChallenge\TechTrendEmporium\Auth\RegisterEmployeeRequest.class
@@ -20,6 +21,7 @@ com\BackendChallenge\TechTrendEmporium\Auth\AuthResponseE.class
 com\BackendChallenge\TechTrendEmporium\repository\UserRepository.class
 com\BackendChallenge\TechTrendEmporium\controller\Requests\ApplyCouponRequest.class
 com\BackendChallenge\TechTrendEmporium\service\Response\WishlistResponse$WishlistResponseBuilder.class
+com\BackendChallenge\TechTrendEmporium\service\Response\GetUsersResponse.class
 com\BackendChallenge\TechTrendEmporium\Auth\RegisterEmployeeRequest$RegisterEmployeeRequestBuilder.class
 com\BackendChallenge\TechTrendEmporium\repository\CategoryRepository.class
 com\BackendChallenge\TechTrendEmporium\repository\CartProductRepository.class
@@ -31,6 +33,7 @@ com\BackendChallenge\TechTrendEmporium\repository\WishlistRepository.class
 com\BackendChallenge\TechTrendEmporium\Auth\LoginRequest.class
 com\BackendChallenge\TechTrendEmporium\entity\ProductUpdateRequest$Inventory.class
 com\BackendChallenge\TechTrendEmporium\controller\Requests\AddReviewRequest$AddReviewRequestBuilder.class
+com\BackendChallenge\TechTrendEmporium\service\Response\GetUsersResponse$GetUsersResponseBuilder.class
 com\BackendChallenge\TechTrendEmporium\entity\Sale.class
 com\BackendChallenge\TechTrendEmporium\service\WishlistService.class
 com\BackendChallenge\TechTrendEmporium\service\Response\CartResponse.class
@@ -46,6 +49,8 @@ com\BackendChallenge\TechTrendEmporium\controller\Requests\AddCouponRequest.clas
 com\BackendChallenge\TechTrendEmporium\service\CouponService.class
 com\BackendChallenge\TechTrendEmporium\entity\Product$Rating.class
 com\BackendChallenge\TechTrendEmporium\service\Response\WishlistResponse.class
+com\BackendChallenge\TechTrendEmporium\controller\UsersController.class
+com\BackendChallenge\TechTrendEmporium\controller\Requests\UserRequest$UserRequestBuilder.class
 com\BackendChallenge\TechTrendEmporium\controller\ProductController.class
 com\BackendChallenge\TechTrendEmporium\repository\SaleRepository.class
 com\BackendChallenge\TechTrendEmporium\TechTrendEmporiumApplication.class
@@ -77,7 +82,6 @@ com\BackendChallenge\TechTrendEmporium\service\Response\CheckoutResponse$Checkou
 com\BackendChallenge\TechTrendEmporium\entity\Cart.class
 com\BackendChallenge\TechTrendEmporium\entity\Product$Inventory.class
 com\BackendChallenge\TechTrendEmporium\Auth\AuthService.class
-com\BackendChallenge\TechTrendEmporium\controller\Wishlist.class
 com\BackendChallenge\TechTrendEmporium\Auth\LogoutRequest.class
 com\BackendChallenge\TechTrendEmporium\dto\CategoryDTO.class
 com\BackendChallenge\TechTrendEmporium\entity\CartProduct.class
@@ -88,6 +92,7 @@ com\BackendChallenge\TechTrendEmporium\controller\CartController.class
 com\BackendChallenge\TechTrendEmporium\service\Response\ReviewResponse$ReviewResponseBuilder.class
 com\BackendChallenge\TechTrendEmporium\Auth\AuthResponse$AuthResponseBuilder.class
 com\BackendChallenge\TechTrendEmporium\controller\Requests\PurchaseRequest.class
+com\BackendChallenge\TechTrendEmporium\controller\Requests\UserRequest.class
 com\BackendChallenge\TechTrendEmporium\controller\Requests\DeleteCouponRequest$DeleteCouponRequestBuilder.class
 com\BackendChallenge\TechTrendEmporium\service\ReviewService.class
 com\BackendChallenge\TechTrendEmporium\repository\WishlistProductRepository.class
