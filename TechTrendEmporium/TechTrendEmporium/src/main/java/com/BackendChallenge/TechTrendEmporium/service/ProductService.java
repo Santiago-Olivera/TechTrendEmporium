@@ -121,6 +121,20 @@ public class ProductService {
 
 
     public Product createProduct(Product product) {
+        if (product.getCategory() == null) {
+            // Set category to "Without_category" if not provided
+            product.setCategory("Without_category");
+        } else {
+            // Validate if the provided category exists in the database
+            Category existingCategory = categoryRepository.findByName(product.getCategory());
+            if (existingCategory == null) {
+                // Category does not exist, handle accordingly (throw exception, set default category, etc.)
+                throw new IllegalArgumentException("Invalid category: " + product.getCategory());
+            } else {
+                // Set the product's category to match the category entity's name
+                product.setCategory(existingCategory.getName());
+            }
+        }
         return productRepository.save(product);
     }
 

@@ -1,12 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: com.BackendChallenge.TechTrendEmporium.service.ProductServiceTest
 -------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.847 s -- in com.BackendChallenge.TechTrendEmporium.service.ProductServiceTest
-=======
-<<<<<<< HEAD
-Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.745 s -- in com.BackendChallenge.TechTrendEmporium.service.ProductServiceTest
-=======
-Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.684 s -- in com.BackendChallenge.TechTrendEmporium.service.ProductServiceTest
->>>>>>> main
->>>>>>> main
+Tests run: 14, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.871 s <<< FAILURE! -- in com.BackendChallenge.TechTrendEmporium.service.ProductServiceTest
+com.BackendChallenge.TechTrendEmporium.service.ProductServiceTest.testCreateProduct -- Time elapsed: 0.019 s <<< ERROR!
+java.lang.IllegalArgumentException: Invalid category: jewelery
+	at com.BackendChallenge.TechTrendEmporium.service.ProductService.createProduct(ProductService.java:132)
+	at com.BackendChallenge.TechTrendEmporium.service.ProductServiceTest.testCreateProduct(ProductServiceTest.java:334)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+

@@ -14,5 +14,7 @@ public interface CategoryRepository extends JpaRepository<Category, Long> {
     List<Category> findByStatus(CategoryStatus status);
     @Query("SELECT c FROM Category c WHERE c.status IN (:statuses) OR c.status IS NULL")
     List<Category> findByStatusInOrStatusIsNull(List<CategoryStatus> statuses);
+
+
 }
 

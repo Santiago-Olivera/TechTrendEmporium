@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.web.ErrorResponse;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
@@ -44,6 +45,9 @@ public class ProductController {
         } else {
             products = productService.getAllProducts();
         }
+        if (products == null || products.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
 
         List<Product> filteredProducts = productService.filterApprovedProducts(products);
         List<Product> paginatedProducts = productService.getPaginatedList(filteredProducts, page, size);
@@ -60,24 +64,36 @@ public class ProductController {
 
     @PostMapping
     public ResponseEntity<?> createProduct(@RequestBody Product product, Authentication authentication) {
-        Product createdProduct;
-        if (authentication.getAuthorities().contains(new SimpleGrantedAuthority("ADMIN"))) {
-            // Admin can create product directly
-            createdProduct = productService.createProduct(product);
+        try {
+            Product createdProduct;
+            if (authentication.getAuthorities().contains(new SimpleGrantedAuthority("ADMIN"))) {
+                // Admin can create product directly
+                createdProduct = productService.createProduct(product);
+                Map<String, Object> response = new HashMap<>();
+                response.put("message", "Product created successfully");
+                response.put("productId", createdProduct.getId());
+                return ResponseEntity.ok().body(response);
+            } else if (authentication.getAuthorities().contains(new SimpleGrantedAuthority("EMPLOYEE"))) {
+                // Employee can create product but needs approval
+                product.setStatus(ProductStatus.PENDING_CREATION);
+                createdProduct = productService.createProduct(product);
+                Map<String, Object> response = new HashMap<>();
+                response.put("message", "Product creation pending approval");
+                response.put("productId", createdProduct.getId());
+                return ResponseEntity.ok().body(response);
+            } else {
+                Map<String, Object> response = new HashMap<>();
+                response.put("status", HttpStatus.FORBIDDEN.value());
+                response.put("error", HttpStatus.FORBIDDEN.getReasonPhrase());
+                response.put("message", "Access Denied");
+                return ResponseEntity.status(HttpStatus.FORBIDDEN).body(response);
+            }
+        } catch (IllegalArgumentException e) {
             Map<String, Object> response = new HashMap<>();
-            response.put("productId", createdProduct.getId());
-            response.put("message", "Product created successfully");
-            return ResponseEntity.ok(response);
-        } else if (authentication.getAuthorities().contains(new SimpleGrantedAuthority("EMPLOYEE"))) {
-            // Employee can create product but needs approval
-            product.setStatus(ProductStatus.PENDING_CREATION);
-            createdProduct = productService.createProduct(product);
-            Map<String, Object> response = new HashMap<>();
-            response.put("productId", createdProduct.getId());
-            response.put("message", "Product creation pending approval");
-            return ResponseEntity.ok(response);
-        } else {
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Access Denied");
+            response.put("status", HttpStatus.BAD_REQUEST.value());
+            response.put("error", HttpStatus.BAD_REQUEST.getReasonPhrase());
+            response.put("message", "Invalid category: " + e.getMessage());
+            return ResponseEntity.badRequest().body(response);
         }
     }
     @DeleteMapping

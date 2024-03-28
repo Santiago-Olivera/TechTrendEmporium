@@ -25,11 +25,19 @@ public class AdminReviewController {
         return ResponseEntity.ok(response);
     }
     @PostMapping("/reviewJob")
-    public ResponseEntity<Map<String, String>> reviewJob(@RequestParam String type, @RequestBody ReviewJobRequestDTO requestDTO) {
+    public ResponseEntity<Map<String, String>> reviewJob(@RequestParam String type, @RequestBody(required = false) ReviewJobRequestDTO requestDTO) {
+        if (requestDTO == null) {
+            Map<String, String> errorResponse = new HashMap<>();
+            errorResponse.put("error", "Request body is required");
+            return ResponseEntity.badRequest().body(errorResponse);
+        }
+
         adminReviewService.reviewJob(type, requestDTO);
+
         Map<String, String> response = new HashMap<>();
         response.put("message", "Success Approval");
         return ResponseEntity.ok(response);
     }
+
 }
 
