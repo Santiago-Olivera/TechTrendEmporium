@@ -1,4 +1,16 @@
 -------------------------------------------------------------------------------
 Test set: com.BackendChallenge.TechTrendEmporium.service.ProductServiceTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.904 s -- in com.BackendChallenge.TechTrendEmporium.service.ProductServiceTest
+=======
+<<<<<<< HEAD
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.847 s -- in com.BackendChallenge.TechTrendEmporium.service.ProductServiceTest
+=======
+<<<<<<< HEAD
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.745 s -- in com.BackendChallenge.TechTrendEmporium.service.ProductServiceTest
+=======
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.684 s -- in com.BackendChallenge.TechTrendEmporium.service.ProductServiceTest
+>>>>>>> main
+>>>>>>> main
+>>>>>>> main
