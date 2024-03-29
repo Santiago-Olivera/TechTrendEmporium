@@ -4,9 +4,7 @@ com\BackendChallenge\TechTrendEmporium\service\CategoryServiceTest.class
 com\BackendChallenge\TechTrendEmporium\dto\ReviewJobRequestDTOTest.class
 com\BackendChallenge\TechTrendEmporium\controller\ProductControllerTest.class
 com\BackendChallenge\TechTrendEmporium\dto\JobDTOTest.class
-com\BackendChallenge\TechTrendEmporium\AuthServiceTest.class
 com\BackendChallenge\TechTrendEmporium\dto\ProductDTOTest.class
 com\BackendChallenge\TechTrendEmporium\service\ProductServiceTest.class
 com\BackendChallenge\TechTrendEmporium\controller\AdminReviewControllerTest.class
-com\BackendChallenge\TechTrendEmporium\TechTrendEmporiumApplicationTests.class
 com\BackendChallenge\TechTrendEmporium\service\AdminReviewServiceTest.class
