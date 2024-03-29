@@ -326,9 +326,17 @@ class ProductServiceTest {
     void testCreateProduct() {
         // Use the first product from the fakeProducts array as the sample product
         Product product = fakeProducts[0];
+        Category fakeCategory = new Category();
+        fakeCategory.setId(30L);
+        fakeCategory.setName("jewelry");
+
 
         // Mock the behavior of the productRepository.save method
         when(productRepository.save(product)).thenReturn(product);
+        // Mock the behavior of the categoryRepository.findByName method to return a Category object
+        when(categoryRepository.findByName(anyString())).thenReturn(fakeCategory);
+
+
 
         // Call the method under test
         Product savedProduct = productService.createProduct(product);
@@ -404,7 +412,5 @@ class ProductServiceTest {
         // Verify that productRepository.save(existingProduct) is called
         verify(productRepository, times(1)).save(existingProduct);
     }
-
-
 
 }

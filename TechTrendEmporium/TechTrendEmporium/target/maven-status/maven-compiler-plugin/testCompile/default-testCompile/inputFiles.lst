@@ -1,5 +1,12 @@
-C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\test\java\com\BackendChallenge\TechTrendEmporium\service\CategoryServiceTest.java
-C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\test\java\com\BackendChallenge\TechTrendEmporium\service\AdminReviewServiceTest.java
-C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\test\java\com\BackendChallenge\TechTrendEmporium\service\ProductServiceTest.java
-C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\test\java\com\BackendChallenge\TechTrendEmporium\AuthServiceTest.java
-C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\test\java\com\BackendChallenge\TechTrendEmporium\TechTrendEmporiumApplicationTests.java
+C:\Users\solivera\OneDrive - ENDAVA\Documents\Backend Challenge\TTES2\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\test\java\com\BackendChallenge\TechTrendEmporium\controller\ProductControllerTest.java
+C:\Users\solivera\OneDrive - ENDAVA\Documents\Backend Challenge\TTES2\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\test\java\com\BackendChallenge\TechTrendEmporium\service\ProductServiceTest.java
+C:\Users\solivera\OneDrive - ENDAVA\Documents\Backend Challenge\TTES2\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\test\java\com\BackendChallenge\TechTrendEmporium\dto\ProductDTOTest.java
+C:\Users\solivera\OneDrive - ENDAVA\Documents\Backend Challenge\TTES2\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\test\java\com\BackendChallenge\TechTrendEmporium\AuthServiceTest.java
+C:\Users\solivera\OneDrive - ENDAVA\Documents\Backend Challenge\TTES2\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\test\java\com\BackendChallenge\TechTrendEmporium\service\CategoryServiceTest.java
+C:\Users\solivera\OneDrive - ENDAVA\Documents\Backend Challenge\TTES2\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\test\java\com\BackendChallenge\TechTrendEmporium\TechTrendEmporiumApplicationTests.java
+C:\Users\solivera\OneDrive - ENDAVA\Documents\Backend Challenge\TTES2\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\test\java\com\BackendChallenge\TechTrendEmporium\controller\categoryControllerTest.java
+C:\Users\solivera\OneDrive - ENDAVA\Documents\Backend Challenge\TTES2\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\test\java\com\BackendChallenge\TechTrendEmporium\dto\ReviewJobRequestDTOTest.java
+C:\Users\solivera\OneDrive - ENDAVA\Documents\Backend Challenge\TTES2\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\test\java\com\BackendChallenge\TechTrendEmporium\service\AdminReviewServiceTest.java
+C:\Users\solivera\OneDrive - ENDAVA\Documents\Backend Challenge\TTES2\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\test\java\com\BackendChallenge\TechTrendEmporium\dto\CategoryDTOTest.java
+C:\Users\solivera\OneDrive - ENDAVA\Documents\Backend Challenge\TTES2\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\test\java\com\BackendChallenge\TechTrendEmporium\dto\JobDTOTest.java
+C:\Users\solivera\OneDrive - ENDAVA\Documents\Backend Challenge\TTES2\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium\src\test\java\com\BackendChallenge\TechTrendEmporium\controller\AdminReviewControllerTest.java

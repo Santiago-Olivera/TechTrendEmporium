@@ -2,6 +2,9 @@
 Test set: com.BackendChallenge.TechTrendEmporium.service.CategoryServiceTest
 -------------------------------------------------------------------------------
 <<<<<<< HEAD
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.705 s -- in com.BackendChallenge.TechTrendEmporium.service.CategoryServiceTest
+=======
+<<<<<<< HEAD
 Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.923 s -- in com.BackendChallenge.TechTrendEmporium.service.CategoryServiceTest
 =======
 <<<<<<< HEAD
@@ -11,6 +14,7 @@ Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.207 s -- in co
 Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.203 s -- in com.BackendChallenge.TechTrendEmporium.service.CategoryServiceTest
 =======
 Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.736 s -- in com.BackendChallenge.TechTrendEmporium.service.CategoryServiceTest
+>>>>>>> main
 >>>>>>> main
 >>>>>>> main
 >>>>>>> main
