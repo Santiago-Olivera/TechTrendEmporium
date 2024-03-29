@@ -33,7 +33,6 @@ public class AuthService {
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword()));
         user.setUsername(name);
         if (user.isLogged()) {
-            System.out.println("User already logged in");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("User already logged in");
         } else {
             user.setLogged(true);

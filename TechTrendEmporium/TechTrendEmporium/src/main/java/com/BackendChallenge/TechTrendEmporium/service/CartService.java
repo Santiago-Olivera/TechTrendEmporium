@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.swing.text.html.Option;
+import java.lang.management.OperatingSystemMXBean;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +37,9 @@ public class CartService {
 
     public boolean addProductToCart(Long userId, Long productId, int quantity) {
         Cart cart = existsCart(userId, "OPEN");
+        if (cart == null) {
+            return false;
+        }
         Optional<Product> product = productRepository.findById(productId);
         Optional<CartProduct> cartProductV = Optional.ofNullable(cartProductRepository.findByCartIdAndProductId(cart.getId(), productId));
         CartProduct cartProduct = new CartProduct();
@@ -62,6 +66,9 @@ public class CartService {
 
     public boolean deleteProductFromCart(Long userId, Long productId, int quantity) {
         Cart cart = existsCart(userId, "OPEN");
+        if (cart == null) {
+            return false;
+        }
         Optional<CartProduct> cartProduct = Optional.ofNullable(cartProductRepository.findByCartIdAndProductId(cart.getId(), productId));
         if (cartProduct.isPresent()) {
             if (cartProduct.get().getQuantity() <= quantity) {
@@ -77,6 +84,9 @@ public class CartService {
 
     public CartResponse getCartByUser(Long userId) {
         Cart cart = existsCart(userId, "OPEN");
+        if (cart == null) {
+            return null;
+        }
         CartResponse response = new CartResponse();
         List<CartProduct> cartProducts = cartProductRepository.findByCartId(cart.getId());
         List<ProductQuantity> products = new ArrayList<>();
@@ -98,7 +108,11 @@ public class CartService {
         }
         else {
             Cart newCart = new Cart();
-            newCart.setUser(userRepository.findById(userId).orElse(null));
+            Optional<User> user = userRepository.findById(userId);
+            if (user.isEmpty()) {
+                return null;
+            }
+            newCart.setUser(user.get());
             newCart.setStatus("OPEN");
             cartRepository.save(newCart);
             return newCart;
@@ -107,13 +121,17 @@ public class CartService {
 
     public CheckoutResponse checkout(Long userId) {
         Cart cart = existsCart(userId, "OPEN");
+        CheckoutResponse response = new CheckoutResponse();
+        if (cart == null) {
+            response.setMessage("Checkout failed, cart not found.");
+            return response;
+        }
         List<CartProduct> cartProducts = cartProductRepository.findByCartId(cart.getId());
         double totalBeforeDiscount = 0.0;
         Optional<Integer> discount = cart.getCoupon().getDiscountPercentage().describeConstable();
         double totalAfterDiscount = 0.0;
         double shipping = 19.99;
         double finalTotal = 0.0;
-        CheckoutResponse response = new CheckoutResponse();
         List<ProductQuantity> products = new ArrayList<>();
         for (CartProduct cartProduct : cartProducts) {
             totalBeforeDiscount += cartProduct.getProduct().getPrice() * cartProduct.getQuantity();
@@ -136,7 +154,7 @@ public class CartService {
         Sale sale = new Sale();
         sale.setCart(cart);
         sale.setTotal(finalTotal);
-        sale.setStatus("APPROVED");
+        sale.setStatus(SaleStatus.APPROVED);
         sale.setDate(String.valueOf(LocalDate.now()));
         saleRepository.save(sale);
         response.setProducts(products);
@@ -153,6 +171,9 @@ public class CartService {
 
     public boolean applyCoupon(Long userId, String couponName) {
         Cart cart = existsCart(userId, "OPEN");
+        if (cart == null) {
+            return false;
+        }
         Optional<User> user = userRepository.findById(userId);
         if (user.isPresent()) {
             if (couponRepository.findByName(couponName).isPresent()) {
