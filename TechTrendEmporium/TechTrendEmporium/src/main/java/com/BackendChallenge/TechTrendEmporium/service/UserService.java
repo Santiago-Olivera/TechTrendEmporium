@@ -46,30 +46,48 @@ public class UserService {
 
     public Boolean deleteUser(String username) {
         Optional<User> userOptional = userRepository.findByUsername(username);
+        Optional<User> DeletedUser = userRepository.findByUsername("deleted_users");
         if (userOptional.isPresent()) {
             User user = userOptional.get();
 
-            List<Cart> carts = cartRepository.findAllByUserId(user.getId());
-            for (Cart cart : carts) {
-                List<CartProduct> cartProducts = cartProductRepository.findByCartId(cart.getId());
-                cartProductRepository.deleteAll(cartProducts);
-                saleRepository.deleteAll(saleRepository.findByCartId(cart.getId()));
-                cartRepository.delete(cart);
+            if (user.getRole().toString().equals("ADMIN")) {
+                return false;
             }
 
-            List<Wishlist> wishlists = wishlistRepository.findAllByUserId(user.getId());
-            for (Wishlist wishlist : wishlists) {
-                List<WishlistProduct> wishlistProducts = wishlistProductRepository.findByWishlistId(wishlist.getId());
-                wishlistProductRepository.deleteAll(wishlistProducts);
-                wishlistRepository.delete(wishlist);
+            if (user.getUsername().equals("deleted_users")) {
+                return false;
+            }
+
+            List<Cart> carts = cartRepository.findAllByUserId(user.getId());
+            for (Cart cart : carts) {
+                if (DeletedUser.isPresent()){
+                    cart.setUser(DeletedUser.get());
+                    cart.setStatus("CLOSED");
+                    cartRepository.save(cart);
+                }
+            }
+
+            Optional<Wishlist> wishlist = wishlistRepository.findByUserId(user.getId());
+
+            if (wishlist.isPresent()) {
+                if (DeletedUser.isPresent()){
+                    wishlist.get().setUser(null);
+                    wishlistRepository.save(wishlist.get());
+                }
             }
 
 
             List<Review> reviews = reviewRepository.findByUserId(user.getId());
-            reviewRepository.deleteAll(reviews);
+            for (Review review : reviews) {
+                if (DeletedUser.isPresent()){
+                    review.setUser(DeletedUser.get());
+                    reviewRepository.save(review);
+                }
+            }
 
             userRepository.delete(user);
             return true;
+
         }
         return false;
     }

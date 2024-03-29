@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <<<<<<< HEAD
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.BackendChallenge.TechTrendEmporium.TechTrendEmporiumApplicationTests" time="33.72" tests="1" errors="0" skipped="0" failures="0">
+=======
+<<<<<<< HEAD
 <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.BackendChallenge.TechTrendEmporium.TechTrendEmporiumApplicationTests" time="30.913" tests="1" errors="0" skipped="0" failures="0">
 =======
 <<<<<<< HEAD
 <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.BackendChallenge.TechTrendEmporium.TechTrendEmporiumApplicationTests" time="25.979" tests="1" errors="0" skipped="0" failures="0">
 =======
 <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.BackendChallenge.TechTrendEmporium.TechTrendEmporiumApplicationTests" time="23.116" tests="1" errors="0" skipped="0" failures="0">
+>>>>>>> main
 >>>>>>> main
 >>>>>>> main
   <properties>
@@ -25,12 +29,16 @@
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17\bin"/>
 <<<<<<< HEAD
+    <property name="sun.java.command" value="C:\Users\jgarzon\AppData\Local\Temp\surefire17954897171739792630\surefirebooter-20240328201250374_3.jar C:\Users\jgarzon\AppData\Local\Temp\surefire17954897171739792630 2024-03-28T20-12-49_672-jvmRun1 surefire-20240328201250374_1tmp surefire_0-20240328201250374_2tmp"/>
+=======
+<<<<<<< HEAD
     <property name="sun.java.command" value="C:\Users\jgarzon\AppData\Local\Temp\surefire3473811362041610718\surefirebooter-20240327092634543_3.jar C:\Users\jgarzon\AppData\Local\Temp\surefire3473811362041610718 2024-03-27T09-26-33_472-jvmRun1 surefire-20240327092634543_1tmp surefire_0-20240327092634543_2tmp"/>
 =======
 <<<<<<< HEAD
     <property name="sun.java.command" value="C:\Users\jgarzon\AppData\Local\Temp\surefire5650700814808153446\surefirebooter-20240326232207875_3.jar C:\Users\jgarzon\AppData\Local\Temp\surefire5650700814808153446 2024-03-26T23-22-07_322-jvmRun1 surefire-20240326232207875_1tmp surefire_0-20240326232207875_2tmp"/>
 =======
     <property name="sun.java.command" value="C:\Users\jgarzon\AppData\Local\Temp\surefire1998730686928040864\surefirebooter-20240326182020943_3.jar C:\Users\jgarzon\AppData\Local\Temp\surefire1998730686928040864 2024-03-26T18-20-20_265-jvmRun1 surefire-20240326182020943_1tmp surefire_0-20240326182020943_2tmp"/>
+>>>>>>> main
 >>>>>>> main
 >>>>>>> main
     <property name="jdk.debug" value="release"/>
@@ -50,12 +58,16 @@
     <property name="FILE_LOG_CHARSET" value="windows-1252"/>
     <property name="java.awt.headless" value="true"/>
 <<<<<<< HEAD
+    <property name="surefire.real.class.path" value="C:\Users\jgarzon\AppData\Local\Temp\surefire17954897171739792630\surefirebooter-20240328201250374_3.jar"/>
+=======
+<<<<<<< HEAD
     <property name="surefire.real.class.path" value="C:\Users\jgarzon\AppData\Local\Temp\surefire3473811362041610718\surefirebooter-20240327092634543_3.jar"/>
 =======
 <<<<<<< HEAD
     <property name="surefire.real.class.path" value="C:\Users\jgarzon\AppData\Local\Temp\surefire5650700814808153446\surefirebooter-20240326232207875_3.jar"/>
 =======
     <property name="surefire.real.class.path" value="C:\Users\jgarzon\AppData\Local\Temp\surefire1998730686928040864\surefirebooter-20240326182020943_3.jar"/>
+>>>>>>> main
 >>>>>>> main
 >>>>>>> main
     <property name="user.script" value=""/>
@@ -77,12 +89,16 @@
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
 <<<<<<< HEAD
+    <property name="PID" value="11564"/>
+=======
+<<<<<<< HEAD
     <property name="PID" value="23424"/>
 =======
 <<<<<<< HEAD
     <property name="PID" value="18000"/>
 =======
     <property name="PID" value="32204"/>
+>>>>>>> main
 >>>>>>> main
 >>>>>>> main
     <property name="sun.os.patch.level" value=""/>
@@ -95,6 +111,12 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
+<<<<<<< HEAD
+  <testcase name="contextLoads" classname="com.BackendChallenge.TechTrendEmporium.TechTrendEmporiumApplicationTests" time="0.026">
+    <system-out><![CDATA[20:12:59.902 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.BackendChallenge.TechTrendEmporium.TechTrendEmporiumApplicationTests]: TechTrendEmporiumApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+20:13:00.106 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.BackendChallenge.TechTrendEmporium.TechTrendEmporiumApplication for test class com.BackendChallenge.TechTrendEmporium.TechTrendEmporiumApplicationTests
+20:13:00.481 [main] INFO org.springframework.boot.devtools.restart.RestartApplicationListener -- Restart disabled due to context in which it is running
+=======
 <<<<<<< HEAD
   <testcase name="contextLoads" classname="com.BackendChallenge.TechTrendEmporium.TechTrendEmporiumApplicationTests" time="0.021">
     <system-out><![CDATA[09:26:48.841 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.BackendChallenge.TechTrendEmporium.TechTrendEmporiumApplicationTests]: TechTrendEmporiumApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
@@ -113,6 +135,7 @@
 18:20:36.083 [main] INFO org.springframework.boot.devtools.restart.RestartApplicationListener -- Restart disabled due to context in which it is running
 >>>>>>> main
 >>>>>>> main
+>>>>>>> main
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -122,6 +145,27 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.3)
 
+<<<<<<< HEAD
+2024-03-28T20:13:01.000-05:00  INFO 11564 --- [           main] c.B.T.TechTrendEmporiumApplicationTests  : Starting TechTrendEmporiumApplicationTests using Java 17.0.10 with PID 11564 (started by jgarzon in C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium)
+2024-03-28T20:13:01.003-05:00  INFO 11564 --- [           main] c.B.T.TechTrendEmporiumApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2024-03-28T20:13:02.927-05:00  INFO 11564 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-28T20:13:03.118-05:00  INFO 11564 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 164 ms. Found 10 JPA repository interfaces.
+2024-03-28T20:13:04.284-05:00  INFO 11564 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-28T20:13:04.458-05:00  INFO 11564 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-28T20:13:04.571-05:00  INFO 11564 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-03-28T20:13:04.819-05:00  INFO 11564 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-28T20:13:04.888-05:00  INFO 11564 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-28T20:13:17.411-05:00  INFO 11564 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2821da0a
+2024-03-28T20:13:17.420-05:00  INFO 11564 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-28T20:13:17.575-05:00  WARN 11564 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-28T20:13:17.576-05:00  WARN 11564 --- [           main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-03-28T20:13:18.495-05:00  INFO 11564 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-28T20:13:23.803-05:00  INFO 11564 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-28T20:13:24.198-05:00  INFO 11564 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-03-28T20:13:32.091-05:00  WARN 11564 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-28T20:13:32.637-05:00  INFO 11564 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6bc8ce0c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@235f56ff, org.springframework.security.web.context.SecurityContextHolderFilter@395a5526, org.springframework.security.web.header.HeaderWriterFilter@11e930e, org.springframework.web.filter.CorsFilter@7da48c4c, org.springframework.security.web.authentication.logout.LogoutFilter@1b00f65a, com.BackendChallenge.TechTrendEmporium.JWT.JwtAuthenticationFilter@7bca3747, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@49253d1f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@67c907b0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@768a4fe, org.springframework.security.web.session.SessionManagementFilter@471933e5, org.springframework.security.web.access.ExceptionTranslationFilter@5803dcf0, org.springframework.security.web.access.intercept.AuthorizationFilter@260dca40]
+2024-03-28T20:13:33.432-05:00  INFO 11564 --- [           main] c.B.T.TechTrendEmporiumApplicationTests  : Started TechTrendEmporiumApplicationTests in 32.974 seconds (process running for 42.742)
+=======
 <<<<<<< HEAD
 2024-03-27T09:26:50.154-05:00  INFO 23424 --- [           main] c.B.T.TechTrendEmporiumApplicationTests  : Starting TechTrendEmporiumApplicationTests using Java 17.0.10 with PID 23424 (started by jgarzon in C:\Users\jgarzon\OneDrive - ENDAVA\Documents\BackendChallenge\TechTrendEmporium\TechTrendEmporium\TechTrendEmporium)
 2024-03-27T09:26:50.157-05:00  INFO 23424 --- [           main] c.B.T.TechTrendEmporiumApplicationTests  : No active profile set, falling back to 1 default profile: "default"
@@ -183,6 +227,7 @@
 2024-03-26T18:20:56.389-05:00  WARN 32204 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2024-03-26T18:20:57.169-05:00  INFO 32204 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@25a65e20, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@c5a82d6, org.springframework.security.web.context.SecurityContextHolderFilter@1e73e9e2, org.springframework.security.web.header.HeaderWriterFilter@1a8b7423, org.springframework.web.filter.CorsFilter@7bdc5700, org.springframework.security.web.authentication.logout.LogoutFilter@1d1071bb, com.BackendChallenge.TechTrendEmporium.JWT.JwtAuthenticationFilter@15f12e7b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@65028252, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@61ae8f75, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4e4892bf, org.springframework.security.web.session.SessionManagementFilter@16023bb2, org.springframework.security.web.access.ExceptionTranslationFilter@2fc6e673, org.springframework.security.web.access.intercept.AuthorizationFilter@45e65f8]
 2024-03-26T18:20:58.326-05:00  INFO 32204 --- [           main] c.B.T.TechTrendEmporiumApplicationTests  : Started TechTrendEmporiumApplicationTests in 22.269 seconds (process running for 36.992)
+>>>>>>> main
 >>>>>>> main
 >>>>>>> main
 ]]></system-out>

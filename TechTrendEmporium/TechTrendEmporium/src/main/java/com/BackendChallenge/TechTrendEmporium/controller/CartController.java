@@ -20,7 +20,12 @@ public class CartController {
 
     @GetMapping(value = "all")
     public ResponseEntity<?> getCarts(@RequestBody CartRequest request) {
-        return ResponseEntity.ok(cartService.getCartByUser(request.getUser_id()));
+        CartResponse response = cartService.getCartByUser(request.getUser_id());
+        if (response != null) {
+            return ResponseEntity.ok(response);
+        } else {
+            return ResponseEntity.badRequest().body("User not found");
+        }
     }
 
     @PostMapping(value = "add")

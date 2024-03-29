@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <<<<<<< HEAD
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.BackendChallenge.TechTrendEmporium.service.AdminReviewServiceTest" time="3.64" tests="12" errors="0" skipped="0" failures="0">
+=======
+<<<<<<< HEAD
 <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.BackendChallenge.TechTrendEmporium.service.AdminReviewServiceTest" time="3.928" tests="12" errors="0" skipped="0" failures="0">
 =======
 <<<<<<< HEAD
 <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.BackendChallenge.TechTrendEmporium.service.AdminReviewServiceTest" time="4.415" tests="12" errors="0" skipped="0" failures="0">
 =======
 <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.BackendChallenge.TechTrendEmporium.service.AdminReviewServiceTest" time="6.163" tests="12" errors="0" skipped="0" failures="0">
+>>>>>>> main
 >>>>>>> main
 >>>>>>> main
   <properties>
@@ -24,12 +28,16 @@
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17\bin"/>
 <<<<<<< HEAD
+    <property name="sun.java.command" value="C:\Users\jgarzon\AppData\Local\Temp\surefire17954897171739792630\surefirebooter-20240328201250374_3.jar C:\Users\jgarzon\AppData\Local\Temp\surefire17954897171739792630 2024-03-28T20-12-49_672-jvmRun1 surefire-20240328201250374_1tmp surefire_0-20240328201250374_2tmp"/>
+=======
+<<<<<<< HEAD
     <property name="sun.java.command" value="C:\Users\jgarzon\AppData\Local\Temp\surefire3473811362041610718\surefirebooter-20240327092634543_3.jar C:\Users\jgarzon\AppData\Local\Temp\surefire3473811362041610718 2024-03-27T09-26-33_472-jvmRun1 surefire-20240327092634543_1tmp surefire_0-20240327092634543_2tmp"/>
 =======
 <<<<<<< HEAD
     <property name="sun.java.command" value="C:\Users\jgarzon\AppData\Local\Temp\surefire5650700814808153446\surefirebooter-20240326232207875_3.jar C:\Users\jgarzon\AppData\Local\Temp\surefire5650700814808153446 2024-03-26T23-22-07_322-jvmRun1 surefire-20240326232207875_1tmp surefire_0-20240326232207875_2tmp"/>
 =======
     <property name="sun.java.command" value="C:\Users\jgarzon\AppData\Local\Temp\surefire1998730686928040864\surefirebooter-20240326182020943_3.jar C:\Users\jgarzon\AppData\Local\Temp\surefire1998730686928040864 2024-03-26T18-20-20_265-jvmRun1 surefire-20240326182020943_1tmp surefire_0-20240326182020943_2tmp"/>
+>>>>>>> main
 >>>>>>> main
 >>>>>>> main
     <property name="jdk.debug" value="release"/>
@@ -47,12 +55,16 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
 <<<<<<< HEAD
+    <property name="surefire.real.class.path" value="C:\Users\jgarzon\AppData\Local\Temp\surefire17954897171739792630\surefirebooter-20240328201250374_3.jar"/>
+=======
+<<<<<<< HEAD
     <property name="surefire.real.class.path" value="C:\Users\jgarzon\AppData\Local\Temp\surefire3473811362041610718\surefirebooter-20240327092634543_3.jar"/>
 =======
 <<<<<<< HEAD
     <property name="surefire.real.class.path" value="C:\Users\jgarzon\AppData\Local\Temp\surefire5650700814808153446\surefirebooter-20240326232207875_3.jar"/>
 =======
     <property name="surefire.real.class.path" value="C:\Users\jgarzon\AppData\Local\Temp\surefire1998730686928040864\surefirebooter-20240326182020943_3.jar"/>
+>>>>>>> main
 >>>>>>> main
 >>>>>>> main
     <property name="user.script" value=""/>
@@ -81,6 +93,10 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
+<<<<<<< HEAD
+  <testcase name="testGetPendingApprovalJobs" classname="com.BackendChallenge.TechTrendEmporium.service.AdminReviewServiceTest" time="3.289"/>
+  <testcase name="testReviewJob_Product_Create_Decline" classname="com.BackendChallenge.TechTrendEmporium.service.AdminReviewServiceTest" time="0.094"/>
+=======
 <<<<<<< HEAD
   <testcase name="testGetPendingApprovalJobs" classname="com.BackendChallenge.TechTrendEmporium.service.AdminReviewServiceTest" time="3.606"/>
   <testcase name="testReviewJob_Product_Create_Decline" classname="com.BackendChallenge.TechTrendEmporium.service.AdminReviewServiceTest" time="0.051"/>
@@ -111,16 +127,24 @@
 =======
   <testcase name="testGetPendingApprovalJobs" classname="com.BackendChallenge.TechTrendEmporium.service.AdminReviewServiceTest" time="5.808"/>
   <testcase name="testReviewJob_Product_Create_Decline" classname="com.BackendChallenge.TechTrendEmporium.service.AdminReviewServiceTest" time="0.069"/>
+>>>>>>> main
   <testcase name="testDenyProductDeletion" classname="com.BackendChallenge.TechTrendEmporium.service.AdminReviewServiceTest" time="0.023"/>
-  <testcase name="testApproveProductDeletion" classname="com.BackendChallenge.TechTrendEmporium.service.AdminReviewServiceTest" time="0.017"/>
+  <testcase name="testApproveProductDeletion" classname="com.BackendChallenge.TechTrendEmporium.service.AdminReviewServiceTest" time="0.013"/>
   <testcase name="testDenyProductCreation" classname="com.BackendChallenge.TechTrendEmporium.service.AdminReviewServiceTest" time="0.02"/>
-  <testcase name="testApproveProductCreation" classname="com.BackendChallenge.TechTrendEmporium.service.AdminReviewServiceTest" time="0.015"/>
-  <testcase name="testDenyCategory" classname="com.BackendChallenge.TechTrendEmporium.service.AdminReviewServiceTest" time="0.016"/>
+  <testcase name="testApproveProductCreation" classname="com.BackendChallenge.TechTrendEmporium.service.AdminReviewServiceTest" time="0.013"/>
+  <testcase name="testDenyCategory" classname="com.BackendChallenge.TechTrendEmporium.service.AdminReviewServiceTest" time="0.014"/>
   <testcase name="testReviewJob_Product_Create_Approve" classname="com.BackendChallenge.TechTrendEmporium.service.AdminReviewServiceTest" time="0.014"/>
+<<<<<<< HEAD
+  <testcase name="testDenyCategoryDeletion" classname="com.BackendChallenge.TechTrendEmporium.service.AdminReviewServiceTest" time="0.011"/>
+  <testcase name="testReviewJob_Category_Delete_Decline" classname="com.BackendChallenge.TechTrendEmporium.service.AdminReviewServiceTest" time="0.016"/>
+  <testcase name="testApproveCategory" classname="com.BackendChallenge.TechTrendEmporium.service.AdminReviewServiceTest" time="0.012"/>
+  <testcase name="testApproveCategoryDeletion" classname="com.BackendChallenge.TechTrendEmporium.service.AdminReviewServiceTest" time="0.01"/>
+=======
   <testcase name="testDenyCategoryDeletion" classname="com.BackendChallenge.TechTrendEmporium.service.AdminReviewServiceTest" time="0.013"/>
   <testcase name="testReviewJob_Category_Delete_Decline" classname="com.BackendChallenge.TechTrendEmporium.service.AdminReviewServiceTest" time="0.017"/>
   <testcase name="testApproveCategory" classname="com.BackendChallenge.TechTrendEmporium.service.AdminReviewServiceTest" time="0.013"/>
   <testcase name="testApproveCategoryDeletion" classname="com.BackendChallenge.TechTrendEmporium.service.AdminReviewServiceTest" time="0.014"/>
+>>>>>>> main
 >>>>>>> main
 >>>>>>> main
 </testsuite>
