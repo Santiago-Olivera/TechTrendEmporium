@@ -1,6 +1,7 @@
 package com.BackendChallenge.TechTrendEmporium.service;
 
 import com.BackendChallenge.TechTrendEmporium.entity.Sale;
+import com.BackendChallenge.TechTrendEmporium.entity.SaleStatus;
 import com.BackendChallenge.TechTrendEmporium.repository.SaleRepository;
 import com.BackendChallenge.TechTrendEmporium.service.Response.PurchaseResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,15 @@ public class PurchasesService {
     public Boolean updatePurchaseStatus(Long saleId, String status) {
         Sale sale = saleRepository.findById(saleId).orElse(null);
         if (sale != null) {
-            sale.setStatus(status);
+            if (status.equals(SaleStatus.SENT.toString())) {
+                sale.setStatus(SaleStatus.SENT);
+            } else if (status.equals(SaleStatus.TO_SEND.toString())) {
+                sale.setStatus(SaleStatus.TO_SEND);
+            } else if (status.equals(SaleStatus.CLOSED.toString())) {
+                sale.setStatus(SaleStatus.CLOSED);
+            } else {
+                return false;
+            }
             saleRepository.save(sale);
             return true;
         }
@@ -42,7 +51,7 @@ public class PurchasesService {
         response.setUserId(sale.getCart().getUser().getId());
         response.setTotal(sale.getTotal());
         response.setDate(sale.getDate());
-        response.setStatus(sale.getStatus());
+        response.setStatus(sale.getStatus().toString());
         return response;
     }
 }

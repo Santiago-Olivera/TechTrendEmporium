@@ -14,6 +14,7 @@ com\BackendChallenge\TechTrendEmporium\entity\WishlistProduct.class
 com\BackendChallenge\TechTrendEmporium\Auth\LoginRequest$LoginRequestBuilder.class
 com\BackendChallenge\TechTrendEmporium\service\Response\ProductQuantity.class
 com\BackendChallenge\TechTrendEmporium\service\CartService.class
+com\BackendChallenge\TechTrendEmporium\entity\SaleStatus.class
 com\BackendChallenge\TechTrendEmporium\repository\ProductRepository.class
 com\BackendChallenge\TechTrendEmporium\JWT\JwtAuthenticationFilter.class
 com\BackendChallenge\TechTrendEmporium\Auth\AuthController.class

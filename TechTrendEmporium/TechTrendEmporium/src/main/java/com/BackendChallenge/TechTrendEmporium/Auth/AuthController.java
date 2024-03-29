@@ -16,16 +16,14 @@ public class AuthController {
 
     @PostMapping(value = "login")
     public Object login(@RequestBody LoginRequest request) {
-        ResponseEntity<Object> responseEntity = authService.login(request);
-        return responseEntity.getBody();
+        return authService.login(request);
     }
 
 
     @PostMapping(value = "auth")
     public Object registerShopper(@RequestBody RegisterShopperRequest request)
     {
-        ResponseEntity<Object> responseEntity = authService.registerShopper(request);
-        return responseEntity.getBody();
+        return authService.registerShopper(request);
     }
 
     @PostMapping(value = "admin/auth")
@@ -37,8 +35,7 @@ public class AuthController {
     @PostMapping(value = "logout")
     public Object logout(@RequestBody LogoutRequest request)
     {
-        ResponseEntity<Object> responseEntity = authService.logout(request);
-        return responseEntity.getBody();
+        return authService.logout(request);
     }
 
 }
