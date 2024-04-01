@@ -3,9 +3,8 @@ package com.BackendChallenge.TechTrendEmporium.service;
 import com.BackendChallenge.TechTrendEmporium.entity.Sale;
 import com.BackendChallenge.TechTrendEmporium.entity.SaleStatus;
 import com.BackendChallenge.TechTrendEmporium.repository.SaleRepository;
-import com.BackendChallenge.TechTrendEmporium.service.Response.PurchaseResponse;
+import com.BackendChallenge.TechTrendEmporium.Response.PurchaseResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.config.annotation.web.oauth2.login.OAuth2LoginSecurityMarker;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

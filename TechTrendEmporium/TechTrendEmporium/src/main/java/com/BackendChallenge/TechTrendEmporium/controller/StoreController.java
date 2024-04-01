@@ -1,11 +1,11 @@
 package com.BackendChallenge.TechTrendEmporium.controller;
 
-import com.BackendChallenge.TechTrendEmporium.controller.Requests.AddReviewRequest;
+import com.BackendChallenge.TechTrendEmporium.Requests.AddReviewRequest;
 import com.BackendChallenge.TechTrendEmporium.dto.ProductDTO;
 import com.BackendChallenge.TechTrendEmporium.entity.Product;
 import com.BackendChallenge.TechTrendEmporium.entity.Review;
 import com.BackendChallenge.TechTrendEmporium.service.ProductService;
-import com.BackendChallenge.TechTrendEmporium.service.Response.ReviewResponse;
+import com.BackendChallenge.TechTrendEmporium.Response.ReviewResponse;
 import com.BackendChallenge.TechTrendEmporium.service.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

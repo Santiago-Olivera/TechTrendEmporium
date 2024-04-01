@@ -7,13 +7,11 @@ import com.BackendChallenge.TechTrendEmporium.entity.User;
 import com.BackendChallenge.TechTrendEmporium.repository.ProductRepository;
 import com.BackendChallenge.TechTrendEmporium.repository.ReviewRepository;
 import com.BackendChallenge.TechTrendEmporium.repository.UserRepository;
-import com.BackendChallenge.TechTrendEmporium.service.Response.ReviewResponse;
+import com.BackendChallenge.TechTrendEmporium.Response.ReviewResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @Service

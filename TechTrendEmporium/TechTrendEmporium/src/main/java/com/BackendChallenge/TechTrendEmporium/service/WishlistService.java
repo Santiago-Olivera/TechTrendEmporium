@@ -8,13 +8,11 @@ import com.BackendChallenge.TechTrendEmporium.repository.UserRepository;
 import com.BackendChallenge.TechTrendEmporium.entity.WishlistProduct;
 import com.BackendChallenge.TechTrendEmporium.repository.WishlistProductRepository;
 import com.BackendChallenge.TechTrendEmporium.repository.WishlistRepository;
-import com.BackendChallenge.TechTrendEmporium.service.Response.WishlistResponse;
+import com.BackendChallenge.TechTrendEmporium.Response.WishlistResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 

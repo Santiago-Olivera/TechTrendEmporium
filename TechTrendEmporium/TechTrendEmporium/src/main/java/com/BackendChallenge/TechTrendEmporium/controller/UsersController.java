@@ -1,10 +1,9 @@
 package com.BackendChallenge.TechTrendEmporium.controller;
 
-import com.BackendChallenge.TechTrendEmporium.controller.Requests.UserRequest;
+import com.BackendChallenge.TechTrendEmporium.Requests.UserRequest;
 import com.BackendChallenge.TechTrendEmporium.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

@@ -1,7 +1,6 @@
 package com.BackendChallenge.TechTrendEmporium.controller;
-import com.BackendChallenge.TechTrendEmporium.controller.WishlistController;
-import com.BackendChallenge.TechTrendEmporium.controller.Requests.WishlistRequest;
-import com.BackendChallenge.TechTrendEmporium.service.Response.WishlistResponse;
+import com.BackendChallenge.TechTrendEmporium.Requests.WishlistRequest;
+import com.BackendChallenge.TechTrendEmporium.Response.WishlistResponse;
 import com.BackendChallenge.TechTrendEmporium.service.WishlistService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

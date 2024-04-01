@@ -1,7 +1,7 @@
 package com.BackendChallenge.TechTrendEmporium.controller;
 
-import com.BackendChallenge.TechTrendEmporium.controller.Requests.AddCouponRequest;
-import com.BackendChallenge.TechTrendEmporium.controller.Requests.DeleteCouponRequest;
+import com.BackendChallenge.TechTrendEmporium.Requests.AddCouponRequest;
+import com.BackendChallenge.TechTrendEmporium.Requests.DeleteCouponRequest;
 import com.BackendChallenge.TechTrendEmporium.entity.Coupon;
 import com.BackendChallenge.TechTrendEmporium.service.CouponService;
 import org.junit.jupiter.api.Test;

@@ -1,6 +1,5 @@
 package com.BackendChallenge.TechTrendEmporium.controller;
-import com.BackendChallenge.TechTrendEmporium.controller.UsersController;
-import com.BackendChallenge.TechTrendEmporium.controller.Requests.UserRequest;
+import com.BackendChallenge.TechTrendEmporium.Requests.UserRequest;
 import com.BackendChallenge.TechTrendEmporium.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

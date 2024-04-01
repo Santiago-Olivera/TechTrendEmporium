@@ -1,6 +1,5 @@
 package com.BackendChallenge.TechTrendEmporium.controller;
-import com.BackendChallenge.TechTrendEmporium.controller.PurchaseController;
-import com.BackendChallenge.TechTrendEmporium.controller.Requests.PurchaseRequest;
+import com.BackendChallenge.TechTrendEmporium.Requests.PurchaseRequest;
 import com.BackendChallenge.TechTrendEmporium.service.PurchasesService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -11,7 +10,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import java.util.Collections;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
