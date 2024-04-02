@@ -1,15 +1,13 @@
 package com.BackendChallenge.TechTrendEmporium.controller;
 
-import com.BackendChallenge.TechTrendEmporium.controller.Requests.ApplyCouponRequest;
-import com.BackendChallenge.TechTrendEmporium.controller.Requests.CartRequest;
+import com.BackendChallenge.TechTrendEmporium.Requests.ApplyCouponRequest;
+import com.BackendChallenge.TechTrendEmporium.Requests.CartRequest;
 import com.BackendChallenge.TechTrendEmporium.service.CartService;
-import com.BackendChallenge.TechTrendEmporium.service.Response.CartResponse;
-import com.BackendChallenge.TechTrendEmporium.service.Response.CheckoutResponse;
+import com.BackendChallenge.TechTrendEmporium.Response.CartResponse;
+import com.BackendChallenge.TechTrendEmporium.Response.CheckoutResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/cart")

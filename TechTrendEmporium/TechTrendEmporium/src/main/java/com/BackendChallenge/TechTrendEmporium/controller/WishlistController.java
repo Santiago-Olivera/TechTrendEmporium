@@ -1,7 +1,7 @@
 package com.BackendChallenge.TechTrendEmporium.controller;
 
-import com.BackendChallenge.TechTrendEmporium.controller.Requests.WishlistRequest;
-import com.BackendChallenge.TechTrendEmporium.service.Response.WishlistResponse;
+import com.BackendChallenge.TechTrendEmporium.Requests.WishlistRequest;
+import com.BackendChallenge.TechTrendEmporium.Response.WishlistResponse;
 import com.BackendChallenge.TechTrendEmporium.service.WishlistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

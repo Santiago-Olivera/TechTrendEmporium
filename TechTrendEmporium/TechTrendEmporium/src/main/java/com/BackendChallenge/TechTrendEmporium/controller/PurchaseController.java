@@ -1,6 +1,6 @@
 package com.BackendChallenge.TechTrendEmporium.controller;
 
-import com.BackendChallenge.TechTrendEmporium.controller.Requests.PurchaseRequest;
+import com.BackendChallenge.TechTrendEmporium.Requests.PurchaseRequest;
 import com.BackendChallenge.TechTrendEmporium.service.PurchasesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

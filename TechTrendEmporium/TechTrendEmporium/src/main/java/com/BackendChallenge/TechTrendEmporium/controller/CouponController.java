@@ -1,7 +1,7 @@
 package com.BackendChallenge.TechTrendEmporium.controller;
 
-import com.BackendChallenge.TechTrendEmporium.controller.Requests.AddCouponRequest;
-import com.BackendChallenge.TechTrendEmporium.controller.Requests.DeleteCouponRequest;
+import com.BackendChallenge.TechTrendEmporium.Requests.AddCouponRequest;
+import com.BackendChallenge.TechTrendEmporium.Requests.DeleteCouponRequest;
 import com.BackendChallenge.TechTrendEmporium.entity.Coupon;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 import com.BackendChallenge.TechTrendEmporium.service.CouponService;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/admin/coupon")

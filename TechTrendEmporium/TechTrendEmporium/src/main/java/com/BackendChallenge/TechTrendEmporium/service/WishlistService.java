@@ -8,13 +8,11 @@ import com.BackendChallenge.TechTrendEmporium.repository.UserRepository;
 import com.BackendChallenge.TechTrendEmporium.entity.WishlistProduct;
 import com.BackendChallenge.TechTrendEmporium.repository.WishlistProductRepository;
 import com.BackendChallenge.TechTrendEmporium.repository.WishlistRepository;
-import com.BackendChallenge.TechTrendEmporium.service.Response.WishlistResponse;
+import com.BackendChallenge.TechTrendEmporium.Response.WishlistResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -53,16 +51,19 @@ public class WishlistService {
         Optional<Wishlist> wishlist = wishlistRepository.findByUserId(userId);
         WishlistProduct wishlistProduct = new WishlistProduct();
         Product product = productRepository.findById(productId).orElseThrow(() -> new RuntimeException("Product not found"));
+        Wishlist currentWishlist;
         if (wishlist.isEmpty()) {
             Wishlist newWishlist = new Wishlist();
             newWishlist.setUser(userRepository.findById(userId).orElse(null));
             wishlistRepository.save(newWishlist);
             wishlistProduct.setWishlist(newWishlist);
+            currentWishlist = newWishlist;
         }
         else {
             wishlistProduct.setWishlist(wishlist.get());
+            currentWishlist = wishlist.get();
         }
-        if (wishlistProductRepository.findByWishlistIdAndProductId(wishlist.get().getId(), productId) != null) {
+        if (wishlistProductRepository.findByWishlistIdAndProductId(currentWishlist.getId(), productId) != null) {
             return false;
         }
         wishlistProduct.setProduct(product);

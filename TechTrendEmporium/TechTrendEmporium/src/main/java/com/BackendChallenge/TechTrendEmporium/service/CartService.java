@@ -2,17 +2,15 @@ package com.BackendChallenge.TechTrendEmporium.service;
 
 import com.BackendChallenge.TechTrendEmporium.entity.*;
 import com.BackendChallenge.TechTrendEmporium.repository.*;
-import com.BackendChallenge.TechTrendEmporium.service.Response.CartResponse;
-import com.BackendChallenge.TechTrendEmporium.service.Response.CheckoutResponse;
-import com.BackendChallenge.TechTrendEmporium.service.Response.ProductQuantity;
+import com.BackendChallenge.TechTrendEmporium.Response.CartResponse;
+import com.BackendChallenge.TechTrendEmporium.Response.CheckoutResponse;
+import com.BackendChallenge.TechTrendEmporium.Response.ProductQuantity;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
 
 import org.springframework.stereotype.Service;
 
-import javax.swing.text.html.Option;
-import java.lang.management.OperatingSystemMXBean;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,11 +35,14 @@ public class CartService {
 
     public boolean addProductToCart(Long userId, Long productId, int quantity) {
         Cart cart = existsCart(userId, "OPEN");
+        System.out.println("Cart: " + cart);
         if (cart == null) {
             return false;
         }
         Optional<Product> product = productRepository.findById(productId);
+        System.out.println("Product: " + product);
         Optional<CartProduct> cartProductV = Optional.ofNullable(cartProductRepository.findByCartIdAndProductId(cart.getId(), productId));
+        System.out.println("CartProduct: " + cartProductV);
         CartProduct cartProduct = new CartProduct();
         if (product.isPresent()) {
             cartProduct.setCart(cart);
