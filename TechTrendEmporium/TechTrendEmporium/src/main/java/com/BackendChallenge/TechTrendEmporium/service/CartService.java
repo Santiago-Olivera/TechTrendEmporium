@@ -35,11 +35,14 @@ public class CartService {
 
     public boolean addProductToCart(Long userId, Long productId, int quantity) {
         Cart cart = existsCart(userId, "OPEN");
+        System.out.println("Cart: " + cart);
         if (cart == null) {
             return false;
         }
         Optional<Product> product = productRepository.findById(productId);
+        System.out.println("Product: " + product);
         Optional<CartProduct> cartProductV = Optional.ofNullable(cartProductRepository.findByCartIdAndProductId(cart.getId(), productId));
+        System.out.println("CartProduct: " + cartProductV);
         CartProduct cartProduct = new CartProduct();
         if (product.isPresent()) {
             cartProduct.setCart(cart);

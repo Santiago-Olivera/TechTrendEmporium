@@ -198,12 +198,24 @@ class CategoryControllerTest {
                 ((Map<String, String>) Objects.requireNonNull(responseEntity.getBody())).get("message"));
     }
 
+    @Test
+    void testUpdateCategory_NotFound() {
+        // Mock request body
+        CategoryUpdateRequest request = new CategoryUpdateRequest();
+        request.setId(1L);
+        request.setName("UpdatedCategory");
 
+        // Mock the behavior of categoryService.updateCategory(request) to throw NoSuchElementException
+        doThrow(new NoSuchElementException()).when(categoryService).updateCategory(request);
 
+        // Call the method under test
+        ResponseEntity<?> responseEntity = categoryController.updateCategory(request);
 
+        // Verify that categoryService.updateCategory(request) is called
+        verify(categoryService, times(1)).updateCategory(request);
 
-
-
-
+        // Assert the response
+        assertEquals(HttpStatus.NOT_FOUND, responseEntity.getStatusCode());
+    }
 }
 

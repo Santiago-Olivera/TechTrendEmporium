@@ -1,6 +1,7 @@
 package com.BackendChallenge.TechTrendEmporium.service;
 
 import com.BackendChallenge.TechTrendEmporium.entity.Product;
+import com.BackendChallenge.TechTrendEmporium.entity.User;
 import com.BackendChallenge.TechTrendEmporium.entity.Wishlist;
 import com.BackendChallenge.TechTrendEmporium.entity.WishlistProduct;
 import com.BackendChallenge.TechTrendEmporium.repository.ProductRepository;
@@ -97,5 +98,25 @@ public class WishlistServiceTest {
         when(wishlistProductRepository.findByWishlistIdAndProductId(anyLong(), anyLong())).thenReturn(null);
 
         assertFalse(wishlistService.removeProductFromWishlist(1L, 1L));
+    }
+
+    @Test
+    public void addProductToWishlistTest_WishlistIsEmpty() {
+        // Prepare the data
+        Long userId = 1L;
+        Long productId = 1L;
+
+        // Mock the repository calls
+        when(wishlistRepository.findByUserId(userId)).thenReturn(Optional.empty());
+        when(userRepository.findById(userId)).thenReturn(Optional.of(new User()));
+        when(productRepository.findById(productId)).thenReturn(Optional.of(new Product()));
+
+        // Call the method and check the result
+        boolean result = wishlistService.addProductToWishlist(userId, productId);
+        assertTrue(result);
+
+        // Verify the interactions
+        verify(wishlistRepository, times(1)).save(any(Wishlist.class));
+        verify(wishlistProductRepository, times(1)).save(any(WishlistProduct.class));
     }
 }

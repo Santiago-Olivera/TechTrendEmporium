@@ -51,16 +51,19 @@ public class WishlistService {
         Optional<Wishlist> wishlist = wishlistRepository.findByUserId(userId);
         WishlistProduct wishlistProduct = new WishlistProduct();
         Product product = productRepository.findById(productId).orElseThrow(() -> new RuntimeException("Product not found"));
+        Wishlist currentWishlist;
         if (wishlist.isEmpty()) {
             Wishlist newWishlist = new Wishlist();
             newWishlist.setUser(userRepository.findById(userId).orElse(null));
             wishlistRepository.save(newWishlist);
             wishlistProduct.setWishlist(newWishlist);
+            currentWishlist = newWishlist;
         }
         else {
             wishlistProduct.setWishlist(wishlist.get());
+            currentWishlist = wishlist.get();
         }
-        if (wishlistProductRepository.findByWishlistIdAndProductId(wishlist.get().getId(), productId) != null) {
+        if (wishlistProductRepository.findByWishlistIdAndProductId(currentWishlist.getId(), productId) != null) {
             return false;
         }
         wishlistProduct.setProduct(product);

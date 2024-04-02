@@ -1,6 +1,9 @@
 package com.BackendChallenge.TechTrendEmporium.service;
+import com.BackendChallenge.TechTrendEmporium.Response.PurchaseResponse;
+import com.BackendChallenge.TechTrendEmporium.entity.Cart;
 import com.BackendChallenge.TechTrendEmporium.entity.Sale;
 import com.BackendChallenge.TechTrendEmporium.entity.SaleStatus;
+import com.BackendChallenge.TechTrendEmporium.entity.User;
 import com.BackendChallenge.TechTrendEmporium.repository.SaleRepository;
 import com.BackendChallenge.TechTrendEmporium.service.PurchasesService;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,6 +13,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -28,17 +32,73 @@ public class PurchasesServiceTest {
         MockitoAnnotations.initMocks(this);
     }
 
-//    @Test
-//    public void getPurchasesByUserIdTest() {
-//        when(saleRepository.findByCartUserId(anyLong())).thenReturn(Arrays.asList(new Sale(), new Sale()));
-//        assertEquals(2, purchasesService.getPurchasesByUserId(1L).size());
-//    }
-//
-//    @Test
-//    public void getAllPurchasesTest() {
-//        when(saleRepository.findAll()).thenReturn(Arrays.asList(new Sale(), new Sale()));
-//        assertEquals(2, purchasesService.getAllPurchases().size());
-//    }
+
+
+    @Test
+    public void getPurchasesByUserIdTest() {
+        // Prepare the data
+        Sale sale1 = new Sale();
+        Sale sale2 = new Sale();
+
+        Cart cart1 = mock(Cart.class);
+        Cart cart2 = mock(Cart.class);
+        User user1 = mock(User.class);
+        User user2 = mock(User.class);
+
+        when(user1.getId()).thenReturn(1L);
+        when(user2.getId()).thenReturn(1L);
+
+        when(cart1.getUser()).thenReturn(user1);
+        when(cart2.getUser()).thenReturn(user2);
+
+        sale1.setCart(cart1);
+        sale1.setStatus(SaleStatus.SENT); // Set status for sale1
+
+        sale2.setCart(cart2);
+        sale2.setStatus(SaleStatus.SENT); // Set status for sale2
+
+        // Mock the repository call
+        when(saleRepository.findByCartUserId(anyLong())).thenReturn(Arrays.asList(sale1, sale2));
+
+        // Call the method and check the result
+        List<PurchaseResponse> result = purchasesService.getPurchasesByUserId(1L);
+        assertEquals(2, result.size());
+        assertEquals(1L, result.get(0).getUserId());
+        assertEquals(1L, result.get(1).getUserId());
+    }
+
+    @Test
+    public void getAllPurchasesTest() {
+        // Prepare the data
+        Sale sale1 = new Sale();
+        Sale sale2 = new Sale();
+
+        Cart cart1 = mock(Cart.class);
+        Cart cart2 = mock(Cart.class);
+        User user1 = mock(User.class);
+        User user2 = mock(User.class);
+
+        when(user1.getId()).thenReturn(1L);
+        when(user2.getId()).thenReturn(1L);
+
+        when(cart1.getUser()).thenReturn(user1);
+        when(cart2.getUser()).thenReturn(user2);
+
+        sale1.setCart(cart1);
+        sale1.setStatus(SaleStatus.SENT); // Set status for sale1
+
+        sale2.setCart(cart2);
+        sale2.setStatus(SaleStatus.SENT); // Set status for sale2
+
+        // Mock the repository call
+        when(saleRepository.findAll()).thenReturn(Arrays.asList(sale1, sale2));
+
+        // Call the method and check the result
+        List<PurchaseResponse> result = purchasesService.getAllPurchases();
+        assertEquals(2, result.size());
+        assertEquals(1L, result.get(0).getUserId());
+        assertEquals(1L, result.get(1).getUserId());
+    }
 
     @Test
     public void updatePurchaseStatusTest_Sent() {
