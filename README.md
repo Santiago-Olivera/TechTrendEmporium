@@ -45,7 +45,7 @@ We use Amazon RDS (Relational Database Service) for our database.
 Our API documentation is available through Swagger.
 
 - **API Documsentation**: Swagger provides a user-friendly interface for exploring and testing our APIs.
-- **URL**: [[Swagger documentation](http://18.218.100.42:8080/doc/swagger-ui/index.html#/)]
+- **URL**: [Swagger documentation](http://18.218.100.42:8080/doc/swagger-ui/index.html#/)
 
 ## Testing
 
@@ -55,3 +55,11 @@ We have implemented comprehensive unit tests for our application using JUnit and
 
 - **Coverage Metrics**: Our unit tests have achieved 91% coverage in controllers, 94% coverage in services, and 80% coverage overall. This high level of coverage ensures that our code is well-tested and reliable.
 - **Mockito**: Mockito is a popular Java mocking framework that we use to mock dependencies in our unit tests. Mockito allows us to isolate components for testing and simulate the behavior of dependencies, ensuring that our tests are focused and efficient.
+
+## Wiki documentation
+
+Our project includes comprehensive documentation in the wiki section, with 12 pages detailing our features and implementation strategies. These pages offer a thorough explanation of how our application works and how each feature is implemented, providing valuable insights for developers and contributors.
+
+## Postman
+
+In addition to the wiki documentation, we have included a Postman collection in the repository. This collection contains a JSON file that can be imported into Postman to easily test all our API endpoints. We have also provided a README file in the same directory to guide users on how to import and use the collection effectively.
